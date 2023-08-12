@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="11d3c1429bd04d11a5193a8357e96b08" Name="Diagram1" ZoomLevel="100">
+        <EntityTypeShape EntityType="iSpyAndStealModel.ACTIVITYLOG" Width="1.5" PointX="8.25" PointY="38.25" />
+        <EntityTypeShape EntityType="iSpyAndStealModel.BROWSER" Width="1.5" PointX="6" PointY="31.75" />
+        <EntityTypeShape EntityType="iSpyAndStealModel.BROWSER_HISTORY" Width="1.5" PointX="8.25" PointY="34.125" />
+        <EntityTypeShape EntityType="iSpyAndStealModel.COMPANY" Width="1.5" PointX="5.75" PointY="0.75" />
+        <EntityTypeShape EntityType="iSpyAndStealModel.COMPANY_INDUSTRY" Width="1.5" PointX="5.75" PointY="4.75" />
+        <EntityTypeShape EntityType="iSpyAndStealModel.LICENSE_TYPE" Width="1.5" PointX="7.75" PointY="0.75" />
+        <EntityTypeShape EntityType="iSpyAndStealModel.LOGTYPE" Width="1.5" PointX="6" PointY="8.875" />
+        <EntityTypeShape EntityType="iSpyAndStealModel.PRIV" Width="1.5" PointX="0.75" PointY="7.375" />
+        <EntityTypeShape EntityType="iSpyAndStealModel.ROLEPRIV" Width="1.5" PointX="3" PointY="2.375" />
+        <EntityTypeShape EntityType="iSpyAndStealModel.ROLE" Width="1.5" PointX="0.75" PointY="1.875" />
+        <EntityTypeShape EntityType="iSpyAndStealModel.SUPPORT" Width="1.5" PointX="8.25" PointY="41.75" />
+        <EntityTypeShape EntityType="iSpyAndStealModel.sysdiagram" Width="1.5" PointX="2.75" PointY="7.75" />
+        <EntityTypeShape EntityType="iSpyAndStealModel.SYSTEM_DEVICE" Width="1.5" PointX="5.25" PointY="54.375" />
+        <EntityTypeShape EntityType="iSpyAndStealModel.SYSTEM_INFORMATION" Width="1.5" PointX="3" PointY="34.75" />
+        <EntityTypeShape EntityType="iSpyAndStealModel.SYSTEM_INSTALLED_APPLICATION" Width="1.5" PointX="5.25" PointY="64.875" />
+        <EntityTypeShape EntityType="iSpyAndStealModel.SYSTEM_LICENSE_KEY" Width="1.5" PointX="5.25" PointY="57.5" />
+        <EntityTypeShape EntityType="iSpyAndStealModel.SYSTEM_MEMORY" Width="1.5" PointX="5.25" PointY="20" />
+        <EntityTypeShape EntityType="iSpyAndStealModel.SYSTEM_MEMORY_SIZE" Width="1.5" PointX="5.25" PointY="70.875" />
+        <EntityTypeShape EntityType="iSpyAndStealModel.SYSTEM_MEMORY_USAGE" Width="1.5" PointX="5.25" PointY="34.75" />
+        <EntityTypeShape EntityType="iSpyAndStealModel.SYSTEM_NETWORK" Width="1.5" PointX="5.25" PointY="16.75" />
+        <EntityTypeShape EntityType="iSpyAndStealModel.SYSTEM_POINTING_DEVICE" Width="1.5" PointX="5.25" PointY="74.25" />
+        <EntityTypeShape EntityType="iSpyAndStealModel.SYSTEM_PORT_CONNECTOR" Width="1.5" PointX="5.25" PointY="67.625" />
+        <EntityTypeShape EntityType="iSpyAndStealModel.SYSTEM_PRINTER" Width="1.5" PointX="5.25" PointY="11.625" />
+        <EntityTypeShape EntityType="iSpyAndStealModel.SYSTEM_PROCESSOR_USAGE" Width="1.5" PointX="5.25" PointY="37.625" />
+        <EntityTypeShape EntityType="iSpyAndStealModel.SYSTEM_SOUND_DEVICE" Width="1.5" PointX="5.25" PointY="44.25" />
+        <EntityTypeShape EntityType="iSpyAndStealModel.SYSTEM_USERS" Width="1.5" PointX="5.25" PointY="40.625" />
+        <EntityTypeShape EntityType="iSpyAndStealModel.SYSTEM_VIDEO_CONTROLLER" Width="1.5" PointX="5.25" PointY="26.625" />
+        <EntityTypeShape EntityType="iSpyAndStealModel.SYSTEM_VOLUME" Width="1.5" PointX="5.25" PointY="50.75" />
+        <EntityTypeShape EntityType="iSpyAndStealModel.USER_LOGIN" Width="1.5" PointX="0.75" PointY="38.125" />
+        <EntityTypeShape EntityType="iSpyAndStealModel.USERPRIV" Width="1.5" PointX="3" PointY="72.875" />
+        <EntityTypeShape EntityType="iSpyAndStealModel.USERROLE" Width="1.5" PointX="3" PointY="5.125" />
+        <EntityTypeShape EntityType="iSpyAndStealModel.WINDOW_ACTIVE" Width="1.5" PointX="5.25" PointY="60.875" />
+        <EntityTypeShape EntityType="iSpyAndStealModel.V_BrowerHistoryAll" Width="1.5" PointX="7.75" PointY="3.75" />
+        <EntityTypeShape EntityType="iSpyAndStealModel.V_BROWSER_HISTORY" Width="1.5" PointX="8.75" PointY="7.75" />
+        <EntityTypeShape EntityType="iSpyAndStealModel.V_ROLE_PRIV" Width="1.5" PointX="9.75" PointY="0.75" />
+        <EntityTypeShape EntityType="iSpyAndStealModel.V_SYSTEM_ACTIVE_WINDOW" Width="1.5" PointX="0.75" PointY="10.75" />
+        <EntityTypeShape EntityType="iSpyAndStealModel.V_SYSTEM_ACTIVE_WINDOWS" Width="1.5" PointX="10.75" PointY="4.75" />
+        <EntityTypeShape EntityType="iSpyAndStealModel.V_SYSTEM_INFOR_REGISTERED" Width="1.5" PointX="10.75" PointY="9.75" />
+        <EntityTypeShape EntityType="iSpyAndStealModel.V_SYSTEM_MEMORY" Width="1.5" PointX="7.75" PointY="11.75" />
+        <EntityTypeShape EntityType="iSpyAndStealModel.V_SYSTEM_MEMORY_INFO" Width="1.5" PointX="12.75" PointY="0.75" />
+        <EntityTypeShape EntityType="iSpyAndStealModel.V_SYSTEM_MEMORY_USAGE" Width="1.5" PointX="12.75" PointY="5.75" />
+        <EntityTypeShape EntityType="iSpyAndStealModel.V_SYSTEM_NETWOR_DEVICES" Width="1.5" PointX="12.75" PointY="9.75" />
+        <EntityTypeShape EntityType="iSpyAndStealModel.V_SYSTEM_NETWORK" Width="1.5" PointX="14.75" PointY="0.75" />
+        <EntityTypeShape EntityType="iSpyAndStealModel.V_SYSTEM_POINTING_DEVICE" Width="1.5" PointX="14.75" PointY="4.75" />
+        <EntityTypeShape EntityType="iSpyAndStealModel.V_SYSTEM_PORTS_CONNECTOR" Width="1.5" PointX="14.75" PointY="9.75" />
+        <EntityTypeShape EntityType="iSpyAndStealModel.V_SYSTEM_PRINTER_INFORMATION" Width="1.5" PointX="12.75" PointY="14.75" />
+        <EntityTypeShape EntityType="iSpyAndStealModel.V_SYSTEM_PROCESSOR_USAGE" Width="1.5" PointX="14.75" PointY="14.75" />
+        <EntityTypeShape EntityType="iSpyAndStealModel.V_SYSTEM_REGISTERED_APPS" Width="1.5" PointX="0.75" PointY="15.75" />
+        <EntityTypeShape EntityType="iSpyAndStealModel.V_SYSTEM_SOUND" Width="1.5" PointX="16.75" PointY="0.75" />
+        <EntityTypeShape EntityType="iSpyAndStealModel.V_SYSTEM_SOUND_DEVICES" Width="1.5" PointX="16.75" PointY="5.75" />
+        <EntityTypeShape EntityType="iSpyAndStealModel.V_SYSTEM_VIDEO_CONTROLLER" Width="1.5" PointX="16.75" PointY="10.75" />
+        <EntityTypeShape EntityType="iSpyAndStealModel.V_SYSTEM_VIDEO_CONTROLLERS" Width="1.5" PointX="16.75" PointY="15.75" />
+        <EntityTypeShape EntityType="iSpyAndStealModel.V_SYSTEM_VOLUME" Width="1.5" PointX="7.75" PointY="17.75" />
+        <EntityTypeShape EntityType="iSpyAndStealModel.V_USER_LOGIN_DETAIL" Width="1.5" PointX="9.75" PointY="17.75" />
+        <EntityTypeShape EntityType="iSpyAndStealModel.V_USER_PRIVS_WITHROLE" Width="1.5" PointX="18.75" PointY="0.75" />
+        <AssociationConnector Association="iSpyAndStealModel.FK_ACTIVITYLOG_LOGTYPES" />
+        <AssociationConnector Association="iSpyAndStealModel.FK_ACTIVITYLOG_SYSTEM_INFORMATION" />
+        <AssociationConnector Association="iSpyAndStealModel.FK_BROWSER_HISTORY_BROWSER" />
+        <AssociationConnector Association="iSpyAndStealModel.FK_BROWSER_HISTORY_SYSTEM_INFORMATION" />
+        <AssociationConnector Association="iSpyAndStealModel.FK_ROLEPRIVS_PRIVS" />
+        <AssociationConnector Association="iSpyAndStealModel.FK_ROLEPRIVS_ROLES" />
+        <AssociationConnector Association="iSpyAndStealModel.FK_USERROLES_ROLES" />
+        <AssociationConnector Association="iSpyAndStealModel.FK_SUPPORT_SYSTEM_INFORMATION" />
+        <AssociationConnector Association="iSpyAndStealModel.FK_SUPPORT_USER_LOGIN" />
+        <AssociationConnector Association="iSpyAndStealModel.FK_SYSTEM_DEVICE_SYSTEM_INFORMATION" />
+        <AssociationConnector Association="iSpyAndStealModel.FK_HARDWARE_INFORMATION_USER_LOGIN" />
+        <AssociationConnector Association="iSpyAndStealModel.FK_SYSTEM_INSTALLED_APPLICATION_SYSTEM_INFORMATION" />
+        <AssociationConnector Association="iSpyAndStealModel.FK_SYSTEM_LICENSE_KEY_SYSTEM_INFORMATION" />
+        <AssociationConnector Association="iSpyAndStealModel.FK_SYSTEM_MEMORY_SIZE_SYSTEM_INFORMATION" />
+        <AssociationConnector Association="iSpyAndStealModel.FK_SYSTEM_MEMORY_SYSTEM_INFORMATION" />
+        <AssociationConnector Association="iSpyAndStealModel.FK_SYSTEM_MEMORY_USAGE_SYSTEM_INFORMATION" />
+        <AssociationConnector Association="iSpyAndStealModel.FK_SYSTEM_NETWORK_SYSTEM_INFORMATION" />
+        <AssociationConnector Association="iSpyAndStealModel.FK_SYSTEM_POINTING_DEVICE_SYSTEM_INFORMATION" />
+        <AssociationConnector Association="iSpyAndStealModel.FK_SYSTEM_PORT_CONNECTOR_SYSTEM_INFORMATION" />
+        <AssociationConnector Association="iSpyAndStealModel.FK_SYSTEM_PRINTER_SYSTEM_INFORMATION" />
+        <AssociationConnector Association="iSpyAndStealModel.FK_SYSTEM_PROCESSOR_USAGE_SYSTEM_INFORMATION" />
+        <AssociationConnector Association="iSpyAndStealModel.FK_SYSTEM_SOUND_DEVICE_SYSTEM_INFORMATION" />
+        <AssociationConnector Association="iSpyAndStealModel.FK_SYSTEM_USERS_SYSTEM_INFORMATION" />
+        <AssociationConnector Association="iSpyAndStealModel.FK_SYSTEM_VIDEO_CONTROLLER_SYSTEM_INFORMATION" />
+        <AssociationConnector Association="iSpyAndStealModel.FK_SYSTEM_VOLUME_SYSTEM_INFORMATION" />
+        <AssociationConnector Association="iSpyAndStealModel.FK_WINDOW_ACTIVE_SYSTEM_INFORMATION" />
+        <AssociationConnector Association="iSpyAndStealModel.FK_SYSTEM_USERS_USER_LOGIN" />
+        <AssociationConnector Association="iSpyAndStealModel.FK_USERPRIVS_USER_LOGIN" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

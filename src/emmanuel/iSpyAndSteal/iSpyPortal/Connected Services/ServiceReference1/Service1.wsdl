@@ -1,0 +1,1086 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://tempuri.org/" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" name="Service" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://185.208.207.126/Service/Service.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://185.208.207.126/Service/Service.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://185.208.207.126/Service/Service.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/System.Web.UI.WebControls" />
+      <xsd:import schemaLocation="http://185.208.207.126/Service/Service.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/iSpyAndStealService" />
+      <xsd:import schemaLocation="http://185.208.207.126/Service/Service.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Entities" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IService_GetAllSystem_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllSystem" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetAllSystem_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllSystemResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_AddHardwareInformation_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddHardwareInformation" />
+  </wsdl:message>
+  <wsdl:message name="IService_AddHardwareInformation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddHardwareInformationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_AddTicket_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddTicket" />
+  </wsdl:message>
+  <wsdl:message name="IService_AddTicket_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddTicketResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_AddPrivs_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddPrivs" />
+  </wsdl:message>
+  <wsdl:message name="IService_AddPrivs_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddPrivsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetPrivs_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPrivs" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetPrivs_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPrivsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetUserRoleWithPrivs_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserRoleWithPrivs" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetUserRoleWithPrivs_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserRoleWithPrivsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetRoleWithPrivileges_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRoleWithPrivileges" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetRoleWithPrivileges_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRoleWithPrivilegesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_AddPrivsToRole_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddPrivsToRole" />
+  </wsdl:message>
+  <wsdl:message name="IService_AddPrivsToRole_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddPrivsToRoleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetUsers_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUsers" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetUsers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUsersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetRolePrivleges_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRolePrivleges" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetRolePrivleges_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRolePrivlegesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_AddRole_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddRole" />
+  </wsdl:message>
+  <wsdl:message name="IService_AddRole_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddRoleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetRoles_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRoles" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetRoles_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRolesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_AssingRolesToMultiUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:AssingRolesToMultiUser" />
+  </wsdl:message>
+  <wsdl:message name="IService_AssingRolesToMultiUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AssingRolesToMultiUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_RevokeMultiRoleFromUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:RevokeMultiRoleFromUser" />
+  </wsdl:message>
+  <wsdl:message name="IService_RevokeMultiRoleFromUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RevokeMultiRoleFromUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_AuthenticateUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:AuthenticateUser" />
+  </wsdl:message>
+  <wsdl:message name="IService_AuthenticateUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AuthenticateUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_AuthenticateUserMac_InputMessage">
+    <wsdl:part name="parameters" element="tns:AuthenticateUserMac" />
+  </wsdl:message>
+  <wsdl:message name="IService_AuthenticateUserMac_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AuthenticateUserMacResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_ChnagePassword_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChnagePassword" />
+  </wsdl:message>
+  <wsdl:message name="IService_ChnagePassword_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChnagePasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_AddActiveWindows_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddActiveWindows" />
+  </wsdl:message>
+  <wsdl:message name="IService_AddActiveWindows_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddActiveWindowsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_AddVolume_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddVolume" />
+  </wsdl:message>
+  <wsdl:message name="IService_AddVolume_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddVolumeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_AddSystemMemory_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddSystemMemory" />
+  </wsdl:message>
+  <wsdl:message name="IService_AddSystemMemory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddSystemMemoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_CreateLoginHistory_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateLoginHistory" />
+  </wsdl:message>
+  <wsdl:message name="IService_CreateLoginHistory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateLoginHistoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_AddSystemPointingDevice_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddSystemPointingDevice" />
+  </wsdl:message>
+  <wsdl:message name="IService_AddSystemPointingDevice_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddSystemPointingDeviceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_AddSystemPortConnector_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddSystemPortConnector" />
+  </wsdl:message>
+  <wsdl:message name="IService_AddSystemPortConnector_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddSystemPortConnectorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_AddSystemPrinters_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddSystemPrinters" />
+  </wsdl:message>
+  <wsdl:message name="IService_AddSystemPrinters_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddSystemPrintersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_AddSystemSoundDeices_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddSystemSoundDeices" />
+  </wsdl:message>
+  <wsdl:message name="IService_AddSystemSoundDeices_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddSystemSoundDeicesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_AddSystemVideoConroller_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddSystemVideoConroller" />
+  </wsdl:message>
+  <wsdl:message name="IService_AddSystemVideoConroller_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddSystemVideoConrollerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_AddSystemNetworkInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddSystemNetworkInfo" />
+  </wsdl:message>
+  <wsdl:message name="IService_AddSystemNetworkInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddSystemNetworkInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetSystemActiveWindow_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSystemActiveWindow" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetSystemActiveWindow_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSystemActiveWindowResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetSystemNetwork_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSystemNetwork" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetSystemNetwork_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSystemNetworkResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetSystemMemory_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSystemMemory" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetSystemMemory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSystemMemoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetSystemPointingDevice_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSystemPointingDevice" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetSystemPointingDevice_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSystemPointingDeviceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetSystemPorts_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSystemPorts" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetSystemPorts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSystemPortsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetSystemPrinter_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSystemPrinter" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetSystemPrinter_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSystemPrinterResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetSystemSound_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSystemSound" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetSystemSound_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSystemSoundResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetSystemVideoControllers_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSystemVideoControllers" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetSystemVideoControllers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSystemVideoControllersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetSystemVolume_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSystemVolume" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetSystemVolume_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSystemVolumeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetSystemMemoryUsage_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSystemMemoryUsage" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetSystemMemoryUsage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSystemMemoryUsageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetSystemProcessorUsage_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSystemProcessorUsage" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetSystemProcessorUsage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSystemProcessorUsageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_AddSystemMemoryUsage_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddSystemMemoryUsage" />
+  </wsdl:message>
+  <wsdl:message name="IService_AddSystemMemoryUsage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddSystemMemoryUsageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_AddSystemProcessorUsage_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddSystemProcessorUsage" />
+  </wsdl:message>
+  <wsdl:message name="IService_AddSystemProcessorUsage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddSystemProcessorUsageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_AddChromeHistory_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddChromeHistory" />
+  </wsdl:message>
+  <wsdl:message name="IService_AddChromeHistory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddChromeHistoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_Activate_InputMessage">
+    <wsdl:part name="parameters" element="tns:Activate" />
+  </wsdl:message>
+  <wsdl:message name="IService_Activate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActivateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_AddSystemInstalledApps_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddSystemInstalledApps" />
+  </wsdl:message>
+  <wsdl:message name="IService_AddSystemInstalledApps_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddSystemInstalledAppsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_VerifyLicense_InputMessage">
+    <wsdl:part name="parameters" element="tns:VerifyLicense" />
+  </wsdl:message>
+  <wsdl:message name="IService_VerifyLicense_OutputMessage">
+    <wsdl:part name="parameters" element="tns:VerifyLicenseResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_loginUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:loginUser" />
+  </wsdl:message>
+  <wsdl:message name="IService_loginUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:loginUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_registerUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:registerUser" />
+  </wsdl:message>
+  <wsdl:message name="IService_registerUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:registerUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_getBrowserHistoryAll_InputMessage">
+    <wsdl:part name="parameters" element="tns:getBrowserHistoryAll" />
+  </wsdl:message>
+  <wsdl:message name="IService_getBrowserHistoryAll_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getBrowserHistoryAllResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetRegisteredSystems_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRegisteredSystems" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetRegisteredSystems_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRegisteredSystemsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetInstalledApps_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetInstalledApps" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetInstalledApps_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetInstalledAppsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetSysActiveWindows_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSysActiveWindows" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetSysActiveWindows_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSysActiveWindowsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetSystemVideoControllersNew_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSystemVideoControllersNew" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetSystemVideoControllersNew_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSystemVideoControllersNewResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetSystemSoundDevicesPortal_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSystemSoundDevicesPortal" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetSystemSoundDevicesPortal_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSystemSoundDevicesPortalResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetSystemNetworkDevicePortal_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSystemNetworkDevicePortal" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetSystemNetworkDevicePortal_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSystemNetworkDevicePortalResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetSystemPointingDevicePortal_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSystemPointingDevicePortal" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetSystemPointingDevicePortal_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSystemPointingDevicePortalResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetSystemPortsDevicePortal_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSystemPortsDevicePortal" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetSystemPortsDevicePortal_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSystemPortsDevicePortalResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetSystemPrintDevicePortal_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSystemPrintDevicePortal" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetSystemPrintDevicePortal_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSystemPrintDevicePortalResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IService">
+    <wsdl:operation name="GetAllSystem">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetAllSystem" message="tns:IService_GetAllSystem_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetAllSystemResponse" message="tns:IService_GetAllSystem_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddHardwareInformation">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/AddHardwareInformation" message="tns:IService_AddHardwareInformation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/AddHardwareInformationResponse" message="tns:IService_AddHardwareInformation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddTicket">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/AddTicket" message="tns:IService_AddTicket_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/AddTicketResponse" message="tns:IService_AddTicket_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddPrivs">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/AddPrivs" message="tns:IService_AddPrivs_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/AddPrivsResponse" message="tns:IService_AddPrivs_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPrivs">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetPrivs" message="tns:IService_GetPrivs_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetPrivsResponse" message="tns:IService_GetPrivs_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserRoleWithPrivs">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetUserRoleWithPrivs" message="tns:IService_GetUserRoleWithPrivs_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetUserRoleWithPrivsResponse" message="tns:IService_GetUserRoleWithPrivs_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRoleWithPrivileges">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetRoleWithPrivileges" message="tns:IService_GetRoleWithPrivileges_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetRoleWithPrivilegesResponse" message="tns:IService_GetRoleWithPrivileges_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddPrivsToRole">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/AddPrivsToRole" message="tns:IService_AddPrivsToRole_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/AddPrivsToRoleResponse" message="tns:IService_AddPrivsToRole_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUsers">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetUsers" message="tns:IService_GetUsers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetUsersResponse" message="tns:IService_GetUsers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRolePrivleges">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetRolePrivleges" message="tns:IService_GetRolePrivleges_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetRolePrivlegesResponse" message="tns:IService_GetRolePrivleges_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddRole">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/AddRole" message="tns:IService_AddRole_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/AddRoleResponse" message="tns:IService_AddRole_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRoles">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetRoles" message="tns:IService_GetRoles_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetRolesResponse" message="tns:IService_GetRoles_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AssingRolesToMultiUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/AssingRolesToMultiUser" message="tns:IService_AssingRolesToMultiUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/AssingRolesToMultiUserResponse" message="tns:IService_AssingRolesToMultiUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RevokeMultiRoleFromUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/RevokeMultiRoleFromUser" message="tns:IService_RevokeMultiRoleFromUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/RevokeMultiRoleFromUserResponse" message="tns:IService_RevokeMultiRoleFromUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AuthenticateUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/AuthenticateUser" message="tns:IService_AuthenticateUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/AuthenticateUserResponse" message="tns:IService_AuthenticateUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AuthenticateUserMac">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/AuthenticateUserMac" message="tns:IService_AuthenticateUserMac_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/AuthenticateUserMacResponse" message="tns:IService_AuthenticateUserMac_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChnagePassword">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/ChnagePassword" message="tns:IService_ChnagePassword_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/ChnagePasswordResponse" message="tns:IService_ChnagePassword_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddActiveWindows">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/AddActiveWindows" message="tns:IService_AddActiveWindows_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/AddActiveWindowsResponse" message="tns:IService_AddActiveWindows_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddVolume">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/AddVolume" message="tns:IService_AddVolume_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/AddVolumeResponse" message="tns:IService_AddVolume_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddSystemMemory">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/AddSystemMemory" message="tns:IService_AddSystemMemory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/AddSystemMemoryResponse" message="tns:IService_AddSystemMemory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateLoginHistory">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/CreateLoginHistory" message="tns:IService_CreateLoginHistory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/CreateLoginHistoryResponse" message="tns:IService_CreateLoginHistory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddSystemPointingDevice">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/AddSystemPointingDevice" message="tns:IService_AddSystemPointingDevice_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/AddSystemPointingDeviceResponse" message="tns:IService_AddSystemPointingDevice_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddSystemPortConnector">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/AddSystemPortConnector" message="tns:IService_AddSystemPortConnector_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/AddSystemPortConnectorResponse" message="tns:IService_AddSystemPortConnector_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddSystemPrinters">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/AddSystemPrinters" message="tns:IService_AddSystemPrinters_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/AddSystemPrintersResponse" message="tns:IService_AddSystemPrinters_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddSystemSoundDeices">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/AddSystemSoundDeices" message="tns:IService_AddSystemSoundDeices_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/AddSystemSoundDeicesResponse" message="tns:IService_AddSystemSoundDeices_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddSystemVideoConroller">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/AddSystemVideoConroller" message="tns:IService_AddSystemVideoConroller_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/AddSystemVideoConrollerResponse" message="tns:IService_AddSystemVideoConroller_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddSystemNetworkInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/AddSystemNetworkInfo" message="tns:IService_AddSystemNetworkInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/AddSystemNetworkInfoResponse" message="tns:IService_AddSystemNetworkInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSystemActiveWindow">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetSystemActiveWindow" message="tns:IService_GetSystemActiveWindow_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetSystemActiveWindowResponse" message="tns:IService_GetSystemActiveWindow_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSystemNetwork">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetSystemNetwork" message="tns:IService_GetSystemNetwork_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetSystemNetworkResponse" message="tns:IService_GetSystemNetwork_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSystemMemory">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetSystemMemory" message="tns:IService_GetSystemMemory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetSystemMemoryResponse" message="tns:IService_GetSystemMemory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSystemPointingDevice">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetSystemPointingDevice" message="tns:IService_GetSystemPointingDevice_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetSystemPointingDeviceResponse" message="tns:IService_GetSystemPointingDevice_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSystemPorts">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetSystemPorts" message="tns:IService_GetSystemPorts_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetSystemPortsResponse" message="tns:IService_GetSystemPorts_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSystemPrinter">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetSystemPrinter" message="tns:IService_GetSystemPrinter_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetSystemPrinterResponse" message="tns:IService_GetSystemPrinter_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSystemSound">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetSystemSound" message="tns:IService_GetSystemSound_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetSystemSoundResponse" message="tns:IService_GetSystemSound_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSystemVideoControllers">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetSystemVideoControllers" message="tns:IService_GetSystemVideoControllers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetSystemVideoControllersResponse" message="tns:IService_GetSystemVideoControllers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSystemVolume">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetSystemVolume" message="tns:IService_GetSystemVolume_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetSystemVolumeResponse" message="tns:IService_GetSystemVolume_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSystemMemoryUsage">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetSystemMemoryUsage" message="tns:IService_GetSystemMemoryUsage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetSystemMemoryUsageResponse" message="tns:IService_GetSystemMemoryUsage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSystemProcessorUsage">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetSystemProcessorUsage" message="tns:IService_GetSystemProcessorUsage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetSystemProcessorUsageResponse" message="tns:IService_GetSystemProcessorUsage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddSystemMemoryUsage">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/AddSystemMemoryUsage" message="tns:IService_AddSystemMemoryUsage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/AddSystemMemoryUsageResponse" message="tns:IService_AddSystemMemoryUsage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddSystemProcessorUsage">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/AddSystemProcessorUsage" message="tns:IService_AddSystemProcessorUsage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/AddSystemProcessorUsageResponse" message="tns:IService_AddSystemProcessorUsage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddChromeHistory">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/AddChromeHistory" message="tns:IService_AddChromeHistory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/AddChromeHistoryResponse" message="tns:IService_AddChromeHistory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Activate">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/Activate" message="tns:IService_Activate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/ActivateResponse" message="tns:IService_Activate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddSystemInstalledApps">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/AddSystemInstalledApps" message="tns:IService_AddSystemInstalledApps_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/AddSystemInstalledAppsResponse" message="tns:IService_AddSystemInstalledApps_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="VerifyLicense">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/VerifyLicense" message="tns:IService_VerifyLicense_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/VerifyLicenseResponse" message="tns:IService_VerifyLicense_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="loginUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/loginUser" message="tns:IService_loginUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/loginUserResponse" message="tns:IService_loginUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="registerUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/registerUser" message="tns:IService_registerUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/registerUserResponse" message="tns:IService_registerUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getBrowserHistoryAll">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/getBrowserHistoryAll" message="tns:IService_getBrowserHistoryAll_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/getBrowserHistoryAllResponse" message="tns:IService_getBrowserHistoryAll_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRegisteredSystems">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetRegisteredSystems" message="tns:IService_GetRegisteredSystems_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetRegisteredSystemsResponse" message="tns:IService_GetRegisteredSystems_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetInstalledApps">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetInstalledApps" message="tns:IService_GetInstalledApps_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetInstalledAppsResponse" message="tns:IService_GetInstalledApps_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSysActiveWindows">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetSysActiveWindows" message="tns:IService_GetSysActiveWindows_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetSysActiveWindowsResponse" message="tns:IService_GetSysActiveWindows_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSystemVideoControllersNew">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetSystemVideoControllersNew" message="tns:IService_GetSystemVideoControllersNew_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetSystemVideoControllersNewResponse" message="tns:IService_GetSystemVideoControllersNew_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSystemSoundDevicesPortal">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetSystemSoundDevicesPortal" message="tns:IService_GetSystemSoundDevicesPortal_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetSystemSoundDevicesPortalResponse" message="tns:IService_GetSystemSoundDevicesPortal_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSystemNetworkDevicePortal">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetSystemNetworkDevicePortal" message="tns:IService_GetSystemNetworkDevicePortal_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetSystemNetworkDevicePortalResponse" message="tns:IService_GetSystemNetworkDevicePortal_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSystemPointingDevicePortal">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetSystemPointingDevicePortal" message="tns:IService_GetSystemPointingDevicePortal_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetSystemPointingDevicePortalResponse" message="tns:IService_GetSystemPointingDevicePortal_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSystemPortsDevicePortal">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetSystemPortsDevicePortal" message="tns:IService_GetSystemPortsDevicePortal_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetSystemPortsDevicePortalResponse" message="tns:IService_GetSystemPortsDevicePortal_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSystemPrintDevicePortal">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetSystemPrintDevicePortal" message="tns:IService_GetSystemPrintDevicePortal_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetSystemPrintDevicePortalResponse" message="tns:IService_GetSystemPrintDevicePortal_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IService" type="tns:IService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetAllSystem">
+      <soap:operation soapAction="http://tempuri.org/IService/GetAllSystem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddHardwareInformation">
+      <soap:operation soapAction="http://tempuri.org/IService/AddHardwareInformation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddTicket">
+      <soap:operation soapAction="http://tempuri.org/IService/AddTicket" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddPrivs">
+      <soap:operation soapAction="http://tempuri.org/IService/AddPrivs" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPrivs">
+      <soap:operation soapAction="http://tempuri.org/IService/GetPrivs" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserRoleWithPrivs">
+      <soap:operation soapAction="http://tempuri.org/IService/GetUserRoleWithPrivs" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRoleWithPrivileges">
+      <soap:operation soapAction="http://tempuri.org/IService/GetRoleWithPrivileges" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddPrivsToRole">
+      <soap:operation soapAction="http://tempuri.org/IService/AddPrivsToRole" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUsers">
+      <soap:operation soapAction="http://tempuri.org/IService/GetUsers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRolePrivleges">
+      <soap:operation soapAction="http://tempuri.org/IService/GetRolePrivleges" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddRole">
+      <soap:operation soapAction="http://tempuri.org/IService/AddRole" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRoles">
+      <soap:operation soapAction="http://tempuri.org/IService/GetRoles" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AssingRolesToMultiUser">
+      <soap:operation soapAction="http://tempuri.org/IService/AssingRolesToMultiUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RevokeMultiRoleFromUser">
+      <soap:operation soapAction="http://tempuri.org/IService/RevokeMultiRoleFromUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AuthenticateUser">
+      <soap:operation soapAction="http://tempuri.org/IService/AuthenticateUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AuthenticateUserMac">
+      <soap:operation soapAction="http://tempuri.org/IService/AuthenticateUserMac" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChnagePassword">
+      <soap:operation soapAction="http://tempuri.org/IService/ChnagePassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddActiveWindows">
+      <soap:operation soapAction="http://tempuri.org/IService/AddActiveWindows" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddVolume">
+      <soap:operation soapAction="http://tempuri.org/IService/AddVolume" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddSystemMemory">
+      <soap:operation soapAction="http://tempuri.org/IService/AddSystemMemory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateLoginHistory">
+      <soap:operation soapAction="http://tempuri.org/IService/CreateLoginHistory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddSystemPointingDevice">
+      <soap:operation soapAction="http://tempuri.org/IService/AddSystemPointingDevice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddSystemPortConnector">
+      <soap:operation soapAction="http://tempuri.org/IService/AddSystemPortConnector" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddSystemPrinters">
+      <soap:operation soapAction="http://tempuri.org/IService/AddSystemPrinters" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddSystemSoundDeices">
+      <soap:operation soapAction="http://tempuri.org/IService/AddSystemSoundDeices" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddSystemVideoConroller">
+      <soap:operation soapAction="http://tempuri.org/IService/AddSystemVideoConroller" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddSystemNetworkInfo">
+      <soap:operation soapAction="http://tempuri.org/IService/AddSystemNetworkInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSystemActiveWindow">
+      <soap:operation soapAction="http://tempuri.org/IService/GetSystemActiveWindow" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSystemNetwork">
+      <soap:operation soapAction="http://tempuri.org/IService/GetSystemNetwork" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSystemMemory">
+      <soap:operation soapAction="http://tempuri.org/IService/GetSystemMemory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSystemPointingDevice">
+      <soap:operation soapAction="http://tempuri.org/IService/GetSystemPointingDevice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSystemPorts">
+      <soap:operation soapAction="http://tempuri.org/IService/GetSystemPorts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSystemPrinter">
+      <soap:operation soapAction="http://tempuri.org/IService/GetSystemPrinter" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSystemSound">
+      <soap:operation soapAction="http://tempuri.org/IService/GetSystemSound" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSystemVideoControllers">
+      <soap:operation soapAction="http://tempuri.org/IService/GetSystemVideoControllers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSystemVolume">
+      <soap:operation soapAction="http://tempuri.org/IService/GetSystemVolume" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSystemMemoryUsage">
+      <soap:operation soapAction="http://tempuri.org/IService/GetSystemMemoryUsage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSystemProcessorUsage">
+      <soap:operation soapAction="http://tempuri.org/IService/GetSystemProcessorUsage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddSystemMemoryUsage">
+      <soap:operation soapAction="http://tempuri.org/IService/AddSystemMemoryUsage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddSystemProcessorUsage">
+      <soap:operation soapAction="http://tempuri.org/IService/AddSystemProcessorUsage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddChromeHistory">
+      <soap:operation soapAction="http://tempuri.org/IService/AddChromeHistory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Activate">
+      <soap:operation soapAction="http://tempuri.org/IService/Activate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddSystemInstalledApps">
+      <soap:operation soapAction="http://tempuri.org/IService/AddSystemInstalledApps" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VerifyLicense">
+      <soap:operation soapAction="http://tempuri.org/IService/VerifyLicense" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="loginUser">
+      <soap:operation soapAction="http://tempuri.org/IService/loginUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="registerUser">
+      <soap:operation soapAction="http://tempuri.org/IService/registerUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getBrowserHistoryAll">
+      <soap:operation soapAction="http://tempuri.org/IService/getBrowserHistoryAll" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRegisteredSystems">
+      <soap:operation soapAction="http://tempuri.org/IService/GetRegisteredSystems" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInstalledApps">
+      <soap:operation soapAction="http://tempuri.org/IService/GetInstalledApps" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSysActiveWindows">
+      <soap:operation soapAction="http://tempuri.org/IService/GetSysActiveWindows" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSystemVideoControllersNew">
+      <soap:operation soapAction="http://tempuri.org/IService/GetSystemVideoControllersNew" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSystemSoundDevicesPortal">
+      <soap:operation soapAction="http://tempuri.org/IService/GetSystemSoundDevicesPortal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSystemNetworkDevicePortal">
+      <soap:operation soapAction="http://tempuri.org/IService/GetSystemNetworkDevicePortal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSystemPointingDevicePortal">
+      <soap:operation soapAction="http://tempuri.org/IService/GetSystemPointingDevicePortal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSystemPortsDevicePortal">
+      <soap:operation soapAction="http://tempuri.org/IService/GetSystemPortsDevicePortal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSystemPrintDevicePortal">
+      <soap:operation soapAction="http://tempuri.org/IService/GetSystemPrintDevicePortal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service">
+    <wsdl:port name="BasicHttpBinding_IService" binding="tns:BasicHttpBinding_IService">
+      <soap:address location="http://185.208.207.126/Service/Service.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,17 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\emmanuel",
+    "\\emmanuel\\iSpyAndSteal",
+    "\\emmanuel\\iSpyAndSteal\\packages",
+    "\\emmanuel\\iSpyAndSteal\\packages\\EntityFramework.6.2.0",
+    "\\emmanuel\\iSpyAndSteal\\packages\\EntityFramework.6.2.0\\content",
+    "\\emmanuel\\iSpyAndSteal\\packages\\EntityFramework.6.2.0\\content\\net40",
+    "\\emmanuel\\iSpyAndSteal\\packages\\System.Data.SQLite.EF6.1.0.117.0",
+    "\\emmanuel\\iSpyAndSteal\\packages\\System.Data.SQLite.EF6.1.0.117.0\\tools",
+    "\\emmanuel\\iSpyAndSteal\\Utilities",
+    "\\emmanuel\\iSpyAndSteal\\Utilities\\obj"
+  ],
+  "SelectedNode": "\\emmanuel\\iSpyAndSteal\\iSpyPortal\\HardwareInfo.cs",
+  "PreviewInSolutionExplorer": false
+}

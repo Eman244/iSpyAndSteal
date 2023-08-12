@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Entities" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Entities" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfPrivsList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PrivsList" nillable="true" type="tns:PrivsList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPrivsList" nillable="true" type="tns:ArrayOfPrivsList" />
+  <xs:complexType name="PrivsList">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DEFAULTNAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DEFUULTTEXT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PRIVID" type="xs:int" />
+      <xs:element minOccurs="0" name="STATUS" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PrivsList" nillable="true" type="tns:PrivsList" />
+  <xs:complexType name="ArrayOfUserRoleWithPrivsList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="UserRoleWithPrivsList" nillable="true" type="tns:UserRoleWithPrivsList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUserRoleWithPrivsList" nillable="true" type="tns:ArrayOfUserRoleWithPrivsList" />
+  <xs:complexType name="UserRoleWithPrivsList">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DEFAULTNAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DEFUULTTEXT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PRIVID" type="xs:int" />
+      <xs:element minOccurs="0" name="ROLEID" type="xs:int" />
+      <xs:element minOccurs="0" name="ROLENAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="STATUS" type="xs:boolean" />
+      <xs:element minOccurs="0" name="USER_ID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UserRoleWithPrivsList" nillable="true" type="tns:UserRoleWithPrivsList" />
+  <xs:complexType name="ArrayOfRolePrivsList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RolePrivsList" nillable="true" type="tns:RolePrivsList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRolePrivsList" nillable="true" type="tns:ArrayOfRolePrivsList" />
+  <xs:complexType name="RolePrivsList">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DEFAULTNAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DEFUULTTEXT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ISACTIVE" type="xs:long" />
+      <xs:element minOccurs="0" name="PRIVID" type="xs:int" />
+      <xs:element minOccurs="0" name="ROLEID" type="xs:int" />
+      <xs:element minOccurs="0" name="ROLENAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="STATUS" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RolePrivsList" nillable="true" type="tns:RolePrivsList" />
+  <xs:complexType name="ArrayOfRoleList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RoleList" nillable="true" type="tns:RoleList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRoleList" nillable="true" type="tns:ArrayOfRoleList" />
+  <xs:complexType name="RoleList">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CREATEDBY" type="xs:int" />
+      <xs:element minOccurs="0" name="CREATEDDATE" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ISACTIVE" type="xs:long" />
+      <xs:element minOccurs="0" name="LASTMODIFIED" type="xs:int" />
+      <xs:element minOccurs="0" name="LASTMODIFIEDDATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ROLEID" type="xs:int" />
+      <xs:element minOccurs="0" name="ROLENAME" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RoleList" nillable="true" type="tns:RoleList" />
+  <xs:complexType name="ArrayOfRolePrivleges">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RolePrivleges" nillable="true" type="tns:RolePrivleges" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRolePrivleges" nillable="true" type="tns:ArrayOfRolePrivleges" />
+  <xs:complexType name="RolePrivleges">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DEFAULTNAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PRIVID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RolePrivleges" nillable="true" type="tns:RolePrivleges" />
+  <xs:complexType name="ArrayOfUsersEntity">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="UsersEntity" nillable="true" type="tns:UsersEntity" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUsersEntity" nillable="true" type="tns:ArrayOfUsersEntity" />
+  <xs:complexType name="UsersEntity">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ADDRESS_LINE_1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ADDRESS_LINE_2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CITY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="COMPANY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Country" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EMAIL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EMAIL_ALERT" type="xs:boolean" />
+      <xs:element minOccurs="0" name="FIRST_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LAST_LOGIN" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="LAST_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LOGIN_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PASSWORD" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PHONE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PHONE_ALERT" type="xs:boolean" />
+      <xs:element minOccurs="0" name="PINCODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SMS_ALERT" type="xs:boolean" />
+      <xs:element minOccurs="0" name="STATE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="STATUS" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="USER_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="USER_ROLE" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UsersEntity" nillable="true" type="tns:UsersEntity" />
+  <xs:complexType name="ArrayOfRolePrivlegesList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RolePrivlegesList" nillable="true" type="tns:RolePrivlegesList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRolePrivlegesList" nillable="true" type="tns:ArrayOfRolePrivlegesList" />
+  <xs:complexType name="RolePrivlegesList">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DEFAULTNAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DEFUULTTEXT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ISACTIVE" type="xs:long" />
+      <xs:element minOccurs="0" name="PRIVID" type="xs:int" />
+      <xs:element minOccurs="0" name="ROLEID" type="xs:int" />
+      <xs:element minOccurs="0" name="ROLENAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="STATUS" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RolePrivlegesList" nillable="true" type="tns:RolePrivlegesList" />
+  <xs:complexType name="LicenseDevices">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DEVICE_MAC" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EXPIRE" type="xs:boolean" />
+      <xs:element minOccurs="0" name="FK_USER_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="LAST_SEEN" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="LIC_CODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LIC_REG_ID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LicenseDevices" nillable="true" type="tns:LicenseDevices" />
+  <xs:complexType name="UserPortalEntity">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="EMAIL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EXPIRY_DATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FK_LICENSE__ID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="PASSWORD" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PROFILE_IMAGE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PURCHASE_DATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="RESET_HASH" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RESET_HASH_EXPIRY" type="xs:boolean" />
+      <xs:element minOccurs="0" name="USER_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="USER_NAME" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UserPortalEntity" nillable="true" type="tns:UserPortalEntity" />
+  <xs:complexType name="ArrayOfV_BrowserHistory">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="V_BrowserHistory" nillable="true" type="tns:V_BrowserHistory" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfV_BrowserHistory" nillable="true" type="tns:ArrayOfV_BrowserHistory" />
+  <xs:complexType name="V_BrowserHistory">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Brower" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LAST_VISIT_DATE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LAST_VISIT_TIME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TITLE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="URL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VISIT_COUNT" nillable="true" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="V_BrowserHistory" nillable="true" type="tns:V_BrowserHistory" />
+</xs:schema>

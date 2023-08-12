@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="iSpyAndStealService.Service" CodeBehind="Service.svc.cs" %>

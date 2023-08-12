@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+https://go.microsoft.com/fwlink/?LinkID=208121.
+-->
+<Project>
+  <PropertyGroup>
+    <_PublishTargetUrl>C:\Users\Administrator\Service</_PublishTargetUrl>
+    <History>True|2023-03-23T18:03:58.2442784Z;True|2023-03-23T18:49:53.1150088+01:00;True|2023-03-23T18:22:15.6830813+01:00;True|2023-03-23T18:18:41.1196602+01:00;True|2023-03-23T13:20:19.5542718+01:00;True|2023-03-23T11:38:49.9329653+01:00;True|2023-03-23T11:37:02.1142175+01:00;True|2023-03-23T11:33:39.0153994+01:00;True|2023-03-23T11:32:03.1868591+01:00;</History>
+    <LastFailureDetails />
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="bin/Entities.dll">
+      <publishTime>03/23/2023 11:31:59</publishTime>
+    </File>
+    <File Include="bin/Entities.dll.config">
+      <publishTime>03/23/2023 11:16:45</publishTime>
+    </File>
+    <File Include="bin/Entities.pdb">
+      <publishTime>03/23/2023 11:31:59</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.dll">
+      <publishTime>10/23/2017 15:15:18</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.SqlServer.dll">
+      <publishTime>10/23/2017 15:15:20</publishTime>
+    </File>
+    <File Include="bin/iSpyAndStealService.dll">
+      <publishTime>03/23/2023 19:03:56</publishTime>
+    </File>
+    <File Include="bin/iSpyAndStealService.pdb">
+      <publishTime>03/23/2023 19:03:56</publishTime>
+    </File>
+    <File Include="bin/Utilities.dll">
+      <publishTime>03/23/2023 18:49:50</publishTime>
+    </File>
+    <File Include="bin/Utilities.dll.config">
+      <publishTime>03/23/2023 11:16:45</publishTime>
+    </File>
+    <File Include="bin/Utilities.pdb">
+      <publishTime>03/23/2023 18:49:50</publishTime>
+    </File>
+    <File Include="Model.edmx.diagram">
+      <publishTime>03/23/2023 11:27:00</publishTime>
+    </File>
+    <File Include="Service.svc">
+      <publishTime>03/23/2023 11:22:25</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>03/23/2023 18:22:14</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

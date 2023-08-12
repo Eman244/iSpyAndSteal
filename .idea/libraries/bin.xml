@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="bin">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/src/emmanuel/iSpyAndSteal/iSpyConsole/bin/Debug.zip!/" />
+      <root url="jar://$PROJECT_DIR$/src/emmanuel/iSpyAndSteal/iSpyConsole/bin/Console APp.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

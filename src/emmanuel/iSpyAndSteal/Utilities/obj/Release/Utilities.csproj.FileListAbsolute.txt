@@ -1,0 +1,11 @@
+C:\Users\Administrator\Source\Repos\safwanhashmi\iSpyAndSteal\Utilities\bin\Release\Utilities.dll.config
+C:\Users\Administrator\Source\Repos\safwanhashmi\iSpyAndSteal\Utilities\bin\Release\Utilities.dll
+C:\Users\Administrator\Source\Repos\safwanhashmi\iSpyAndSteal\Utilities\bin\Release\Utilities.pdb
+C:\Users\Administrator\Source\Repos\safwanhashmi\iSpyAndSteal\Utilities\bin\Release\Entities.dll
+C:\Users\Administrator\Source\Repos\safwanhashmi\iSpyAndSteal\Utilities\bin\Release\Entities.pdb
+C:\Users\Administrator\Source\Repos\safwanhashmi\iSpyAndSteal\Utilities\bin\Release\Entities.dll.config
+C:\Users\Administrator\Source\Repos\safwanhashmi\iSpyAndSteal\Utilities\obj\Release\Utilities.csproj.AssemblyReference.cache
+C:\Users\Administrator\Source\Repos\safwanhashmi\iSpyAndSteal\Utilities\obj\Release\Utilities.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Source\Repos\safwanhashmi\iSpyAndSteal\Utilities\obj\Release\Utilities.csproj.CopyComplete
+C:\Users\Administrator\Source\Repos\safwanhashmi\iSpyAndSteal\Utilities\obj\Release\Utilities.dll
+C:\Users\Administrator\Source\Repos\safwanhashmi\iSpyAndSteal\Utilities\obj\Release\Utilities.pdb

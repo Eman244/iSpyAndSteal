@@ -1,0 +1,1517 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="iSpyAndStealModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="ACTIVITYLOG">
+    <Key>
+      <PropertyRef Name="LOGID" />
+    </Key>
+    <Property Name="LOGID" Type="Int32" Nullable="false" />
+    <Property Name="SYSTEM_ID" Type="Int64" Nullable="false" />
+    <Property Name="LOGTYPE" Type="Int32" Nullable="false" />
+    <Property Name="MESSAGE" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="USERID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MAC" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DATE" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="LOGTYPE1" Relationship="Self.FK_ACTIVITYLOG_LOGTYPES" FromRole="ACTIVITYLOG" ToRole="LOGTYPES" />
+    <NavigationProperty Name="SYSTEM_INFORMATION" Relationship="Self.FK_ACTIVITYLOG_SYSTEM_INFORMATION" FromRole="ACTIVITYLOG" ToRole="SYSTEM_INFORMATION" />
+  </EntityType>
+  <EntityType Name="BROWSER">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="NAME" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DESCRIPTION" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="BROWSER_HISTORY" Relationship="Self.FK_BROWSER_HISTORY_BROWSER" FromRole="BROWSER" ToRole="BROWSER_HISTORY" />
+  </EntityType>
+  <EntityType Name="BROWSER_HISTORY">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SYSTEM_ID" Type="Int64" Nullable="false" />
+    <Property Name="URL" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="TITLE" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="VISIT_COUNT" Type="Int64" />
+    <Property Name="LAST_VISIT_TIME" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="LAST_VISIT_DATE" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="BROSWER_ID" Type="Int32" />
+    <NavigationProperty Name="BROWSER" Relationship="Self.FK_BROWSER_HISTORY_BROWSER" FromRole="BROWSER_HISTORY" ToRole="BROWSER" />
+    <NavigationProperty Name="SYSTEM_INFORMATION" Relationship="Self.FK_BROWSER_HISTORY_SYSTEM_INFORMATION" FromRole="BROWSER_HISTORY" ToRole="SYSTEM_INFORMATION" />
+  </EntityType>
+  <EntityType Name="COMPANY">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NAME" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DESCRIPTION" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ADDRESS" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="COUNTRY" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="INDUSTRY_ID" Type="Int32" Nullable="false" />
+    <Property Name="NUMBER_OF_EMPLOYEES" Type="Int32" />
+    <Property Name="PHONE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="EMAIL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="WEB" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="CONTACT_NUMBER_PERSON_IM" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="COMPANY_INDUSTRY">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DESCRIPTION" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LICENSE_TYPE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DESCRIPTION" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LIMIT" Type="Int32" Nullable="false" />
+    <Property Name="TIME_STAMP" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="LOGTYPE">
+    <Key>
+      <PropertyRef Name="LOGTYPEID" />
+    </Key>
+    <Property Name="LOGTYPEID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LOGTEXT" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="ACTIVITYLOGs" Relationship="Self.FK_ACTIVITYLOG_LOGTYPES" FromRole="LOGTYPES" ToRole="ACTIVITYLOG" />
+  </EntityType>
+  <EntityType Name="PRIV">
+    <Key>
+      <PropertyRef Name="PRIVID" />
+    </Key>
+    <Property Name="PRIVID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DEFAULTNAME" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DEFUULTTEXT" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="STATUS" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="ROLEPRIVS" Relationship="Self.FK_ROLEPRIVS_PRIVS" FromRole="PRIVS" ToRole="ROLEPRIVS" />
+  </EntityType>
+  <EntityType Name="ROLEPRIV">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ROLEID" Type="Int32" Nullable="false" />
+    <Property Name="PRIVID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="PRIV" Relationship="Self.FK_ROLEPRIVS_PRIVS" FromRole="ROLEPRIVS" ToRole="PRIVS" />
+    <NavigationProperty Name="ROLE" Relationship="Self.FK_ROLEPRIVS_ROLES" FromRole="ROLEPRIVS" ToRole="ROLES" />
+  </EntityType>
+  <EntityType Name="ROLE">
+    <Key>
+      <PropertyRef Name="ROLEID" />
+    </Key>
+    <Property Name="ROLEID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ROLENAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CREATEDDATE" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="CREATEDBY" Type="Int32" Nullable="false" />
+    <Property Name="LASTMODIFIED" Type="Int32" Nullable="false" />
+    <Property Name="LASTMODIFIEDDATE" Type="DateTime" Precision="0" />
+    <Property Name="ISACTIVE" Type="Int64" Nullable="false" />
+    <NavigationProperty Name="ROLEPRIVS" Relationship="Self.FK_ROLEPRIVS_ROLES" FromRole="ROLES" ToRole="ROLEPRIVS" />
+    <NavigationProperty Name="USERROLES" Relationship="Self.FK_USERROLES_ROLES" FromRole="ROLES" ToRole="USERROLES" />
+  </EntityType>
+  <EntityType Name="SUPPORT">
+    <Key>
+      <PropertyRef Name="TICKET_ID" />
+    </Key>
+    <Property Name="TICKET_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SYSTEM_ID" Type="Int64" Nullable="false" />
+    <Property Name="USERID" Type="Int32" Nullable="false" />
+    <Property Name="SUBJECT" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DISCRIPTION" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MODULE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="URGENCY" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="STATUS" Type="Boolean" Nullable="false" />
+    <Property Name="CREATED_BY" Type="Int32" Nullable="false" />
+    <Property Name="CREATED_DATE" Type="DateTime" Precision="3" />
+    <Property Name="MODIFIED_DATE" Type="DateTime" Precision="3" />
+    <Property Name="ASSIGNED_TO" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="SYSTEM_INFORMATION" Relationship="Self.FK_SUPPORT_SYSTEM_INFORMATION" FromRole="SUPPORT" ToRole="SYSTEM_INFORMATION" />
+    <NavigationProperty Name="USER_LOGIN" Relationship="Self.FK_SUPPORT_USER_LOGIN" FromRole="SUPPORT" ToRole="USER_LOGIN" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="SYSTEM_DEVICE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SYSTEM_ID" Type="Int64" Nullable="false" />
+    <Property Name="DEVICE_ID" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DEVICE_TYPE" Type="Int32" Nullable="false" />
+    <Property Name="DESCRIPTION" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TIME_STAMP" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="SYSTEM_INFORMATION" Relationship="Self.FK_SYSTEM_DEVICE_SYSTEM_INFORMATION" FromRole="SYSTEM_DEVICE" ToRole="SYSTEM_INFORMATION" />
+  </EntityType>
+  <EntityType Name="SYSTEM_INFORMATION">
+    <Key>
+      <PropertyRef Name="SYSTEM_ID" />
+    </Key>
+    <Property Name="SYSTEM_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PROCESSOR_ID" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="HDD_SERIAL_NO" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="MAC_ADDRESS" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="MOTHERBOARD_MANUFACTURER" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="MOTHERBOARD_PRODUCT_ID" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="CD_DVD_DRIVE_PATH" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="BIOS_MAKER" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="BIOS_SERIAL_NO" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="BIOS_CAPTION" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="ACCOUNT_NAME" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="PHYSICAL_RAM_MEMORY" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="RAM_SLOT_ON_MOTHERBOARD" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="CPU_MANUFACTURER" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="CPU_CURRENT_CLOCK_SPEED" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DEFAULT_IP_GATEWAY" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CPU_SPEED_IN_GHZ" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CURRENT_LANGUAGE" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="OS_INFORMATION" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="PROCESSOR_INFORMATION" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="COMPUTER_NAME" Type="String" MaxLength="75" FixedLength="false" Unicode="false" />
+    <Property Name="OS_LICENSE" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="LAST_BOOT_TIME" Type="DateTime" Precision="3" />
+    <Property Name="SYSTEM_UP_TIME" Type="DateTime" Precision="3" />
+    <Property Name="USERID" Type="Int32" Nullable="false" />
+    <Property Name="COMPANY_ID" Type="Int32" />
+    <NavigationProperty Name="ACTIVITYLOGs" Relationship="Self.FK_ACTIVITYLOG_SYSTEM_INFORMATION" FromRole="SYSTEM_INFORMATION" ToRole="ACTIVITYLOG" />
+    <NavigationProperty Name="BROWSER_HISTORY" Relationship="Self.FK_BROWSER_HISTORY_SYSTEM_INFORMATION" FromRole="SYSTEM_INFORMATION" ToRole="BROWSER_HISTORY" />
+    <NavigationProperty Name="SUPPORTs" Relationship="Self.FK_SUPPORT_SYSTEM_INFORMATION" FromRole="SYSTEM_INFORMATION" ToRole="SUPPORT" />
+    <NavigationProperty Name="SYSTEM_DEVICE" Relationship="Self.FK_SYSTEM_DEVICE_SYSTEM_INFORMATION" FromRole="SYSTEM_INFORMATION" ToRole="SYSTEM_DEVICE" />
+    <NavigationProperty Name="USER_LOGIN" Relationship="Self.FK_HARDWARE_INFORMATION_USER_LOGIN" FromRole="SYSTEM_INFORMATION" ToRole="USER_LOGIN" />
+    <NavigationProperty Name="SYSTEM_INSTALLED_APPLICATION" Relationship="Self.FK_SYSTEM_INSTALLED_APPLICATION_SYSTEM_INFORMATION" FromRole="SYSTEM_INFORMATION" ToRole="SYSTEM_INSTALLED_APPLICATION" />
+    <NavigationProperty Name="SYSTEM_LICENSE_KEY" Relationship="Self.FK_SYSTEM_LICENSE_KEY_SYSTEM_INFORMATION" FromRole="SYSTEM_INFORMATION" ToRole="SYSTEM_LICENSE_KEY" />
+    <NavigationProperty Name="SYSTEM_MEMORY_SIZE" Relationship="Self.FK_SYSTEM_MEMORY_SIZE_SYSTEM_INFORMATION" FromRole="SYSTEM_INFORMATION" ToRole="SYSTEM_MEMORY_SIZE" />
+    <NavigationProperty Name="SYSTEM_MEMORY" Relationship="Self.FK_SYSTEM_MEMORY_SYSTEM_INFORMATION" FromRole="SYSTEM_INFORMATION" ToRole="SYSTEM_MEMORY" />
+    <NavigationProperty Name="SYSTEM_MEMORY_USAGE" Relationship="Self.FK_SYSTEM_MEMORY_USAGE_SYSTEM_INFORMATION" FromRole="SYSTEM_INFORMATION" ToRole="SYSTEM_MEMORY_USAGE" />
+    <NavigationProperty Name="SYSTEM_NETWORK" Relationship="Self.FK_SYSTEM_NETWORK_SYSTEM_INFORMATION" FromRole="SYSTEM_INFORMATION" ToRole="SYSTEM_NETWORK" />
+    <NavigationProperty Name="SYSTEM_POINTING_DEVICE" Relationship="Self.FK_SYSTEM_POINTING_DEVICE_SYSTEM_INFORMATION" FromRole="SYSTEM_INFORMATION" ToRole="SYSTEM_POINTING_DEVICE" />
+    <NavigationProperty Name="SYSTEM_PORT_CONNECTOR" Relationship="Self.FK_SYSTEM_PORT_CONNECTOR_SYSTEM_INFORMATION" FromRole="SYSTEM_INFORMATION" ToRole="SYSTEM_PORT_CONNECTOR" />
+    <NavigationProperty Name="SYSTEM_PRINTER" Relationship="Self.FK_SYSTEM_PRINTER_SYSTEM_INFORMATION" FromRole="SYSTEM_INFORMATION" ToRole="SYSTEM_PRINTER" />
+    <NavigationProperty Name="SYSTEM_PROCESSOR_USAGE" Relationship="Self.FK_SYSTEM_PROCESSOR_USAGE_SYSTEM_INFORMATION" FromRole="SYSTEM_INFORMATION" ToRole="SYSTEM_PROCESSOR_USAGE" />
+    <NavigationProperty Name="SYSTEM_SOUND_DEVICE" Relationship="Self.FK_SYSTEM_SOUND_DEVICE_SYSTEM_INFORMATION" FromRole="SYSTEM_INFORMATION" ToRole="SYSTEM_SOUND_DEVICE" />
+    <NavigationProperty Name="SYSTEM_USERS" Relationship="Self.FK_SYSTEM_USERS_SYSTEM_INFORMATION" FromRole="SYSTEM_INFORMATION" ToRole="SYSTEM_USERS" />
+    <NavigationProperty Name="SYSTEM_VIDEO_CONTROLLER" Relationship="Self.FK_SYSTEM_VIDEO_CONTROLLER_SYSTEM_INFORMATION" FromRole="SYSTEM_INFORMATION" ToRole="SYSTEM_VIDEO_CONTROLLER" />
+    <NavigationProperty Name="SYSTEM_VOLUME" Relationship="Self.FK_SYSTEM_VOLUME_SYSTEM_INFORMATION" FromRole="SYSTEM_INFORMATION" ToRole="SYSTEM_VOLUME" />
+    <NavigationProperty Name="WINDOW_ACTIVE" Relationship="Self.FK_WINDOW_ACTIVE_SYSTEM_INFORMATION" FromRole="SYSTEM_INFORMATION" ToRole="WINDOW_ACTIVE" />
+  </EntityType>
+  <EntityType Name="SYSTEM_INSTALLED_APPLICATION">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SYSTEM_ID" Type="Int64" Nullable="false" />
+    <Property Name="APP_NAME" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="SIZE" Type="Int64" Nullable="false" />
+    <NavigationProperty Name="SYSTEM_INFORMATION" Relationship="Self.FK_SYSTEM_INSTALLED_APPLICATION_SYSTEM_INFORMATION" FromRole="SYSTEM_INSTALLED_APPLICATION" ToRole="SYSTEM_INFORMATION" />
+  </EntityType>
+  <EntityType Name="SYSTEM_LICENSE_KEY">
+    <Key>
+      <PropertyRef Name="LICENSE_ID" />
+    </Key>
+    <Property Name="LICENSE_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SYSTEM_ID" Type="Int64" Nullable="false" />
+    <Property Name="PURCHASE_DATE" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="EXPIRE_DATE" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="QTY" Type="Int32" Nullable="false" />
+    <Property Name="EDITION" Type="Int32" Nullable="false" />
+    <Property Name="SUPPORT" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="SYSTEM_INFORMATION" Relationship="Self.FK_SYSTEM_LICENSE_KEY_SYSTEM_INFORMATION" FromRole="SYSTEM_LICENSE_KEY" ToRole="SYSTEM_INFORMATION" />
+  </EntityType>
+  <EntityType Name="SYSTEM_MEMORY">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SYSTEM_ID" Type="Int64" Nullable="false" />
+    <Property Name="ATTRIBUTES" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="BANK_LABEL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CAPACITY" Type="Int64" Nullable="false" />
+    <Property Name="CAPTION" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CONFIGURE_CLOCL_SPEED" Type="Int64" Nullable="false" />
+    <Property Name="CREATION_CLASS_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DATA_WIDTH" Type="Int32" />
+    <Property Name="DESCRIPTION" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DEVICE_LOCATOR" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FORM_FACTOR" Type="Int32" />
+    <Property Name="INTER_LEAVE_DATA_DEPTH" Type="Int32" />
+    <Property Name="INTER_LEAVE_POSITION" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MANUFACTURER" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="SERIAL_NO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SPEED" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TOTAL_WIDTH" Type="Int32" />
+    <Property Name="TYPE_DETAIL" Type="Int32" />
+    <Property Name="MEMORY_TYPE" Type="Int32" />
+    <Property Name="NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PART_NUMBER" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="POSITION_IN_ROW" Type="Int32" />
+    <Property Name="SMBIOS_MEMORY_TYPE" Type="Int32" />
+    <NavigationProperty Name="SYSTEM_INFORMATION" Relationship="Self.FK_SYSTEM_MEMORY_SYSTEM_INFORMATION" FromRole="SYSTEM_MEMORY" ToRole="SYSTEM_INFORMATION" />
+  </EntityType>
+  <EntityType Name="SYSTEM_MEMORY_SIZE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SYSTEM_ID" Type="Int64" Nullable="false" />
+    <Property Name="MEMORY_TYPE" Type="Int32" Nullable="false" />
+    <Property Name="TOTAL" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="FREE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="USED" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TIME_STAMP" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="SYSTEM_INFORMATION" Relationship="Self.FK_SYSTEM_MEMORY_SIZE_SYSTEM_INFORMATION" FromRole="SYSTEM_MEMORY_SIZE" ToRole="SYSTEM_INFORMATION" />
+  </EntityType>
+  <EntityType Name="SYSTEM_MEMORY_USAGE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SYSTEM_ID" Type="Int64" Nullable="false" />
+    <Property Name="USER_ID" Type="Int32" Nullable="false" />
+    <Property Name="USAGE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TIME_STAMP" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="SYSTEM_INFORMATION" Relationship="Self.FK_SYSTEM_MEMORY_USAGE_SYSTEM_INFORMATION" FromRole="SYSTEM_MEMORY_USAGE" ToRole="SYSTEM_INFORMATION" />
+  </EntityType>
+  <EntityType Name="SYSTEM_NETWORK">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SYSTEM_ID" Type="Int64" Nullable="false" />
+    <Property Name="DESCRIPTION" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NAME" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="TIME_STAMP" Type="DateTime" Precision="3" />
+    <Property Name="STATUS" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SPEED" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="SYSTEM_INFORMATION" Relationship="Self.FK_SYSTEM_NETWORK_SYSTEM_INFORMATION" FromRole="SYSTEM_NETWORK" ToRole="SYSTEM_INFORMATION" />
+  </EntityType>
+  <EntityType Name="SYSTEM_POINTING_DEVICE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SYSTEM_ID" Type="Int64" Nullable="false" />
+    <Property Name="CAPTION" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DESCRIPTION" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="DEVICE_ID" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="DEVICE_INTERFACE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="HARDWARE_TYPE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MANUFACTURER" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NUMBER_OF_BUTTONS" Type="Int32" />
+    <Property Name="SYSTEM_NAME" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="SYSTEM_INFORMATION" Relationship="Self.FK_SYSTEM_POINTING_DEVICE_SYSTEM_INFORMATION" FromRole="SYSTEM_POINTING_DEVICE" ToRole="SYSTEM_INFORMATION" />
+  </EntityType>
+  <EntityType Name="SYSTEM_PORT_CONNECTOR">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SYSTEM_ID" Type="Int64" Nullable="false" />
+    <Property Name="CAPTION" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CONNECTOR_TYPE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DESCRIPTION" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TAG" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="SYSTEM_INFORMATION" Relationship="Self.FK_SYSTEM_PORT_CONNECTOR_SYSTEM_INFORMATION" FromRole="SYSTEM_PORT_CONNECTOR" ToRole="SYSTEM_INFORMATION" />
+  </EntityType>
+  <EntityType Name="SYSTEM_PRINTER">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SYSTEM_ID" Type="Int64" Nullable="false" />
+    <Property Name="CAPABILITY_DESCRIPTION" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AVERAGE_PAGES_PER_MINUTE" Type="Int32" />
+    <Property Name="CAPTION" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DEVICE_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PAPER_SIZE_SUPPORTED" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="PRINTER_PAPER_NAME" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="NETWORK" Type="Boolean" />
+    <Property Name="PRINT_PROCESSOR" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SPOOL_ENABLED" Type="Boolean" />
+    <Property Name="HORIZONTAL_RESOLUTION" Type="Int32" />
+    <Property Name="VERTICAL_RESOLUTION" Type="Int32" />
+    <Property Name="SYSTEM_NAME" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="STATUS" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="SYSTEM_INFORMATION" Relationship="Self.FK_SYSTEM_PRINTER_SYSTEM_INFORMATION" FromRole="SYSTEM_PRINTER" ToRole="SYSTEM_INFORMATION" />
+  </EntityType>
+  <EntityType Name="SYSTEM_PROCESSOR_USAGE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SYSTEM_ID" Type="Int64" Nullable="false" />
+    <Property Name="USER_ID" Type="Int32" Nullable="false" />
+    <Property Name="USAGE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TIME_STAMP" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="SYSTEM_INFORMATION" Relationship="Self.FK_SYSTEM_PROCESSOR_USAGE_SYSTEM_INFORMATION" FromRole="SYSTEM_PROCESSOR_USAGE" ToRole="SYSTEM_INFORMATION" />
+  </EntityType>
+  <EntityType Name="SYSTEM_SOUND_DEVICE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SYSTEM_ID" Type="Int64" Nullable="false" />
+    <Property Name="CAPTION" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="DESCRIPTION" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="DEVICE_ID" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="MANUFACTURER" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NAME" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="STATUS_INFO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SYSTEM_NAME" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="SYSTEM_INFORMATION" Relationship="Self.FK_SYSTEM_SOUND_DEVICE_SYSTEM_INFORMATION" FromRole="SYSTEM_SOUND_DEVICE" ToRole="SYSTEM_INFORMATION" />
+  </EntityType>
+  <EntityType Name="SYSTEM_USERS">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="USER_ID" Type="Int32" Nullable="false" />
+    <Property Name="SYSTEM_ID" Type="Int64" Nullable="false" />
+    <NavigationProperty Name="SYSTEM_INFORMATION" Relationship="Self.FK_SYSTEM_USERS_SYSTEM_INFORMATION" FromRole="SYSTEM_USERS" ToRole="SYSTEM_INFORMATION" />
+    <NavigationProperty Name="USER_LOGIN" Relationship="Self.FK_SYSTEM_USERS_USER_LOGIN" FromRole="SYSTEM_USERS" ToRole="USER_LOGIN" />
+  </EntityType>
+  <EntityType Name="SYSTEM_VIDEO_CONTROLLER">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SYSTEM_ID" Type="Int64" Nullable="false" />
+    <Property Name="ADAPTER_COMPATIABILITY" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="ADAPTER_DAC_TYPE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ADAPTER_AVAILABILITY" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CAPTION" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="DESCRIPTION" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="DEVICE_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DRIVER_DATE" Type="DateTime" Precision="3" />
+    <Property Name="DRIVER_VERSION" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NAME" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="VIDEO_ARCHITECTURE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="VIDEO_MEMORY_TYPE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="VIDEO_PROCESSOR" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="SYSTEM_INFORMATION" Relationship="Self.FK_SYSTEM_VIDEO_CONTROLLER_SYSTEM_INFORMATION" FromRole="SYSTEM_VIDEO_CONTROLLER" ToRole="SYSTEM_INFORMATION" />
+  </EntityType>
+  <EntityType Name="SYSTEM_VOLUME">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SYETEM_ID" Type="Int64" Nullable="false" />
+    <Property Name="DEVICE_TYPE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CAPTION" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SERIAL_NO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TOTAL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FREE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="USED" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TIME_STAMP" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="SYSTEM_INFORMATION" Relationship="Self.FK_SYSTEM_VOLUME_SYSTEM_INFORMATION" FromRole="SYSTEM_VOLUME" ToRole="SYSTEM_INFORMATION" />
+  </EntityType>
+  <EntityType Name="USER_LOGIN">
+    <Key>
+      <PropertyRef Name="USER_ID" />
+    </Key>
+    <Property Name="USER_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LOGIN_NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PASSWORD" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="EMAIL" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="USER_ROLE" Type="Int32" />
+    <Property Name="STATUS" Type="Boolean" />
+    <Property Name="COMPANY" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FIRST_NAME" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="LAST_NAME" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="PHONE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="LAST_LOGIN" Type="DateTime" Precision="3" />
+    <Property Name="EMAIL_ALERT" Type="Boolean" Nullable="false" />
+    <Property Name="SMS_ALERT" Type="Boolean" Nullable="false" />
+    <Property Name="PHONE_ALERT" Type="Boolean" Nullable="false" />
+    <Property Name="ADDRESS_LINE_1" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ADDRESS_LINE_2" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="STATE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="CITY" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="PINCODE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="COUNTRY" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FK_COMPANY_ID" Type="Int32" />
+    <NavigationProperty Name="SUPPORTs" Relationship="Self.FK_SUPPORT_USER_LOGIN" FromRole="USER_LOGIN" ToRole="SUPPORT" />
+    <NavigationProperty Name="SYSTEM_INFORMATION" Relationship="Self.FK_HARDWARE_INFORMATION_USER_LOGIN" FromRole="USER_LOGIN" ToRole="SYSTEM_INFORMATION" />
+    <NavigationProperty Name="SYSTEM_USERS" Relationship="Self.FK_SYSTEM_USERS_USER_LOGIN" FromRole="USER_LOGIN" ToRole="SYSTEM_USERS" />
+    <NavigationProperty Name="USERPRIVS" Relationship="Self.FK_USERPRIVS_USER_LOGIN" FromRole="USER_LOGIN" ToRole="USERPRIVS" />
+  </EntityType>
+  <EntityType Name="USERPRIV">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="USERID" Type="Int32" Nullable="false" />
+    <Property Name="PRIV" Type="Int32" Nullable="false" />
+    <Property Name="STATUS" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="USER_LOGIN" Relationship="Self.FK_USERPRIVS_USER_LOGIN" FromRole="USERPRIVS" ToRole="USER_LOGIN" />
+  </EntityType>
+  <EntityType Name="USERROLE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ROLEID" Type="Int32" Nullable="false" />
+    <Property Name="USERID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="ROLE" Relationship="Self.FK_USERROLES_ROLES" FromRole="USERROLES" ToRole="ROLES" />
+  </EntityType>
+  <EntityType Name="WINDOW_ACTIVE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SYSTEM_ID" Type="Int64" />
+    <Property Name="WINDOW_TITLE" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="TIME_STAMP" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UPDATE_DATE" Type="DateTime" Precision="3" />
+    <Property Name="WIN_PROCESS" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="WINDOW_URL" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="VISIT_COUNT" Type="Int64" />
+    <Property Name="SECONDS" Type="Int64" Nullable="false" />
+    <Property Name="START_TIME" Type="DateTime" Precision="3" />
+    <Property Name="END_TIME" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="SYSTEM_INFORMATION" Relationship="Self.FK_WINDOW_ACTIVE_SYSTEM_INFORMATION" FromRole="WINDOW_ACTIVE" ToRole="SYSTEM_INFORMATION" />
+  </EntityType>
+  <EntityType Name="V_BrowerHistoryAll">
+    <Key>
+      <PropertyRef Name="Brower" />
+      <PropertyRef Name="SYSTEM_ID" />
+    </Key>
+    <Property Name="Brower" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="URL" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="TITLE" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="VISIT_COUNT" Type="Int64" />
+    <Property Name="LAST_VISIT_TIME" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="LAST_VISIT_DATE" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="SYSTEM_ID" Type="Int64" Nullable="false" />
+    <Property Name="DESCRIPTION" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="MAC_ADDRESS" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="V_BROWSER_HISTORY">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="SYSTEM_ID" />
+      <PropertyRef Name="NAME" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" />
+    <Property Name="SYSTEM_ID" Type="Int64" Nullable="false" />
+    <Property Name="URL" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="TITLE" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="VISIT_COUNT" Type="Int64" />
+    <Property Name="LAST_VISIT_TIME" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="LAST_VISIT_DATE" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="BROSWER_ID" Type="Int32" />
+    <Property Name="NAME" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DESCRIPTION" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="V_ROLE_PRIV">
+    <Key>
+      <PropertyRef Name="STATUS" />
+      <PropertyRef Name="ROLEID" />
+      <PropertyRef Name="PRIVID" />
+      <PropertyRef Name="DEFAULTNAME" />
+      <PropertyRef Name="DEFUULTTEXT" />
+      <PropertyRef Name="ROLENAME" />
+      <PropertyRef Name="ISACTIVE" />
+    </Key>
+    <Property Name="STATUS" Type="Boolean" Nullable="false" />
+    <Property Name="ROLEID" Type="Int32" Nullable="false" />
+    <Property Name="PRIVID" Type="Int32" Nullable="false" />
+    <Property Name="DEFAULTNAME" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DEFUULTTEXT" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ROLENAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ISACTIVE" Type="Int64" Nullable="false" />
+  </EntityType>
+  <EntityType Name="V_SYSTEM_ACTIVE_WINDOW">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="TIME_STAMP" />
+      <PropertyRef Name="SECONDS" />
+      <PropertyRef Name="SYSTEM_ID" />
+      <PropertyRef Name="USER_ID" />
+      <PropertyRef Name="LOGIN_NAME" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="WINDOW_TITLE" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="TIME_STAMP" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="WIN_PROCESS" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="WINDOW_URL" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="VISIT_COUNT" Type="Int64" />
+    <Property Name="SECONDS" Type="Int64" Nullable="false" />
+    <Property Name="START_TIME" Type="DateTime" Precision="3" />
+    <Property Name="MAC_ADDRESS" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ACCOUNT_NAME" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="COMPUTER_NAME" Type="String" MaxLength="75" FixedLength="false" Unicode="false" />
+    <Property Name="SYSTEM_ID" Type="Int64" Nullable="false" />
+    <Property Name="USER_ID" Type="Int32" Nullable="false" />
+    <Property Name="LOGIN_NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="V_SYSTEM_ACTIVE_WINDOWS">
+    <Key>
+      <PropertyRef Name="TIME_STAMP" />
+      <PropertyRef Name="SECONDS" />
+      <PropertyRef Name="USERID" />
+    </Key>
+    <Property Name="WINDOW_TITLE" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="TIME_STAMP" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="WINDOW_URL" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="VISIT_COUNT" Type="Int64" />
+    <Property Name="SECONDS" Type="Int64" Nullable="false" />
+    <Property Name="START_TIME" Type="DateTime" Precision="3" />
+    <Property Name="SYSTEM_ID" Type="Int64" />
+    <Property Name="MAC_ADDRESS" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="MOTHERBOARD_MANUFACTURER" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="ACCOUNT_NAME" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="DEFAULT_IP_GATEWAY" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="COMPUTER_NAME" Type="String" MaxLength="75" FixedLength="false" Unicode="false" />
+    <Property Name="USERID" Type="Int32" Nullable="false" />
+    <Property Name="LAST_BOOT_TIME" Type="DateTime" Precision="3" />
+    <Property Name="SYSTEM_UP_TIME" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="V_SYSTEM_INFOR_REGISTERED">
+    <Key>
+      <PropertyRef Name="SYSTEM_ID" />
+      <PropertyRef Name="USERID" />
+      <PropertyRef Name="USER_NAME" />
+      <PropertyRef Name="EMAIL" />
+      <PropertyRef Name="LIC_NAME" />
+      <PropertyRef Name="DEVICE_MAC" />
+    </Key>
+    <Property Name="SYSTEM_ID" Type="Int64" Nullable="false" />
+    <Property Name="PROCESSOR_ID" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="HDD_SERIAL_NO" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="MAC_ADDRESS" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="MOTHERBOARD_MANUFACTURER" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="MOTHERBOARD_PRODUCT_ID" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="CD_DVD_DRIVE_PATH" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="BIOS_MAKER" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="BIOS_SERIAL_NO" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="BIOS_CAPTION" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="ACCOUNT_NAME" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="PHYSICAL_RAM_MEMORY" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="RAM_SLOT_ON_MOTHERBOARD" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="CPU_MANUFACTURER" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="CPU_CURRENT_CLOCK_SPEED" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DEFAULT_IP_GATEWAY" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CPU_SPEED_IN_GHZ" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CURRENT_LANGUAGE" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="OS_INFORMATION" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="PROCESSOR_INFORMATION" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="COMPUTER_NAME" Type="String" MaxLength="75" FixedLength="false" Unicode="false" />
+    <Property Name="OS_LICENSE" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="LAST_BOOT_TIME" Type="DateTime" Precision="3" />
+    <Property Name="SYSTEM_UP_TIME" Type="DateTime" Precision="3" />
+    <Property Name="USERID" Type="Int32" Nullable="false" />
+    <Property Name="COMPANY_ID" Type="Int32" />
+    <Property Name="USER_NAME" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="EMAIL" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="FK_LICENSE__ID" Type="Int32" />
+    <Property Name="LIC_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DEVICE_MAC" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="EXPIRY_DATE" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="V_SYSTEM_MEMORY">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="SYSTEM_ID" />
+      <PropertyRef Name="USER_ID" />
+      <PropertyRef Name="CAPACITY" />
+      <PropertyRef Name="CONFIGURE_CLOCL_SPEED" />
+      <PropertyRef Name="LOGIN_NAME" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" />
+    <Property Name="SYSTEM_ID" Type="Int64" Nullable="false" />
+    <Property Name="USER_ID" Type="Int32" Nullable="false" />
+    <Property Name="ATTRIBUTES" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="BANK_LABEL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CAPACITY" Type="Int64" Nullable="false" />
+    <Property Name="CAPTION" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CONFIGURE_CLOCL_SPEED" Type="Int64" Nullable="false" />
+    <Property Name="DESCRIPTION" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DEVICE_LOCATOR" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MANUFACTURER" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="SERIAL_NO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SPEED" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MAC_ADDRESS" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="COMPUTER_NAME" Type="String" MaxLength="75" FixedLength="false" Unicode="false" />
+    <Property Name="SYSTEM_UP_TIME" Type="DateTime" Precision="3" />
+    <Property Name="LOGIN_NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="V_SYSTEM_MEMORY_INFO">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="SYSTEM_ID" />
+      <PropertyRef Name="CAPACITY" />
+      <PropertyRef Name="USERID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" />
+    <Property Name="SYSTEM_ID" Type="Int64" Nullable="false" />
+    <Property Name="ATTRIBUTES" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CAPACITY" Type="Int64" Nullable="false" />
+    <Property Name="CAPTION" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DESCRIPTION" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DEVICE_LOCATOR" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MANUFACTURER" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="SPEED" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MAC_ADDRESS" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ACCOUNT_NAME" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="DEFAULT_IP_GATEWAY" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="COMPUTER_NAME" Type="String" MaxLength="75" FixedLength="false" Unicode="false" />
+    <Property Name="USERID" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="V_SYSTEM_MEMORY_USAGE">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="SYSTEM_ID" />
+      <PropertyRef Name="USER_ID" />
+      <PropertyRef Name="USAGE" />
+      <PropertyRef Name="TIME_STAMP" />
+      <PropertyRef Name="USERID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" />
+    <Property Name="SYSTEM_ID" Type="Int64" Nullable="false" />
+    <Property Name="USER_ID" Type="Int32" Nullable="false" />
+    <Property Name="USAGE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TIME_STAMP" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="MAC_ADDRESS" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="COMPUTER_NAME" Type="String" MaxLength="75" FixedLength="false" Unicode="false" />
+    <Property Name="USERID" Type="Int32" Nullable="false" />
+    <Property Name="PHYSICAL_RAM_MEMORY" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="V_SYSTEM_NETWOR_DEVICES">
+    <Key>
+      <PropertyRef Name="SYSTEM_ID" />
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="USERID" />
+    </Key>
+    <Property Name="SYSTEM_ID" Type="Int64" Nullable="false" />
+    <Property Name="ID" Type="Int64" Nullable="false" />
+    <Property Name="DESCRIPTION" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NAME" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="TIME_STAMP" Type="DateTime" Precision="3" />
+    <Property Name="STATUS" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SPEED" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MAC_ADDRESS" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ACCOUNT_NAME" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="DEFAULT_IP_GATEWAY" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="COMPUTER_NAME" Type="String" MaxLength="75" FixedLength="false" Unicode="false" />
+    <Property Name="LAST_BOOT_TIME" Type="DateTime" Precision="3" />
+    <Property Name="SYSTEM_UP_TIME" Type="DateTime" Precision="3" />
+    <Property Name="USERID" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="V_SYSTEM_NETWORK">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="SYSTEM_ID" />
+      <PropertyRef Name="LOGIN_NAME" />
+      <PropertyRef Name="USER_ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" />
+    <Property Name="SYSTEM_ID" Type="Int64" Nullable="false" />
+    <Property Name="DESCRIPTION" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NAME" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="STATUS" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SPEED" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MAC_ADDRESS" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ACCOUNT_NAME" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="SYSTEM_UP_TIME" Type="DateTime" Precision="3" />
+    <Property Name="LOGIN_NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="USER_ID" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="V_SYSTEM_POINTING_DEVICE">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="SYSTEM_ID" />
+      <PropertyRef Name="Expr1" />
+      <PropertyRef Name="USER_ID" />
+      <PropertyRef Name="LOGIN_NAME" />
+      <PropertyRef Name="USERID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" />
+    <Property Name="SYSTEM_ID" Type="Int64" Nullable="false" />
+    <Property Name="CAPTION" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DESCRIPTION" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="DEVICE_INTERFACE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MANUFACTURER" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SYSTEM_NAME" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Expr1" Type="Int64" Nullable="false" />
+    <Property Name="MAC_ADDRESS" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="SYSTEM_UP_TIME" Type="DateTime" Precision="3" />
+    <Property Name="USER_ID" Type="Int32" Nullable="false" />
+    <Property Name="LOGIN_NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="COMPANY" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="USERID" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="V_SYSTEM_PORTS_CONNECTOR">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="SYSTEM_ID" />
+      <PropertyRef Name="CONNECTOR_TYPE" />
+      <PropertyRef Name="USER_ID" />
+      <PropertyRef Name="LOGIN_NAME" />
+      <PropertyRef Name="USERID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" />
+    <Property Name="SYSTEM_ID" Type="Int64" Nullable="false" />
+    <Property Name="CAPTION" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CONNECTOR_TYPE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DESCRIPTION" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TAG" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MAC_ADDRESS" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ACCOUNT_NAME" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="SYSTEM_UP_TIME" Type="DateTime" Precision="3" />
+    <Property Name="USER_ID" Type="Int32" Nullable="false" />
+    <Property Name="LOGIN_NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="COMPANY" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="USERID" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="V_SYSTEM_PRINTER_INFORMATION">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="SYSTEM_ID" />
+      <PropertyRef Name="USER_ID" />
+      <PropertyRef Name="LOGIN_NAME" />
+      <PropertyRef Name="USERID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" />
+    <Property Name="SYSTEM_ID" Type="Int64" Nullable="false" />
+    <Property Name="CAPTION" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="HORIZONTAL_RESOLUTION" Type="Int32" />
+    <Property Name="VERTICAL_RESOLUTION" Type="Int32" />
+    <Property Name="NETWORK" Type="Boolean" />
+    <Property Name="PRINTER_PAPER_NAME" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="PAPER_SIZE_SUPPORTED" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="SYSTEM_NAME" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="STATUS" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MAC_ADDRESS" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ACCOUNT_NAME" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="SYSTEM_UP_TIME" Type="DateTime" Precision="3" />
+    <Property Name="USER_ID" Type="Int32" Nullable="false" />
+    <Property Name="LOGIN_NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="COMPANY" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="USERID" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="V_SYSTEM_PROCESSOR_USAGE">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="SYSTEM_ID" />
+      <PropertyRef Name="USER_ID" />
+      <PropertyRef Name="USAGE" />
+      <PropertyRef Name="TIME_STAMP" />
+      <PropertyRef Name="USERID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" />
+    <Property Name="SYSTEM_ID" Type="Int64" Nullable="false" />
+    <Property Name="USER_ID" Type="Int32" Nullable="false" />
+    <Property Name="USAGE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TIME_STAMP" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="MAC_ADDRESS" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="COMPUTER_NAME" Type="String" MaxLength="75" FixedLength="false" Unicode="false" />
+    <Property Name="USERID" Type="Int32" Nullable="false" />
+    <Property Name="CPU_SPEED_IN_GHZ" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="V_SYSTEM_REGISTERED_APPS">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="SIZE" />
+      <PropertyRef Name="USERID" />
+      <PropertyRef Name="SYSTEM_ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" />
+    <Property Name="APP_NAME" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="SIZE" Type="Int64" Nullable="false" />
+    <Property Name="MAC_ADDRESS" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ACCOUNT_NAME" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="DEFAULT_IP_GATEWAY" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="COMPUTER_NAME" Type="String" MaxLength="75" FixedLength="false" Unicode="false" />
+    <Property Name="USERID" Type="Int32" Nullable="false" />
+    <Property Name="MOTHERBOARD_MANUFACTURER" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="SYSTEM_ID" Type="Int64" Nullable="false" />
+  </EntityType>
+  <EntityType Name="V_SYSTEM_SOUND">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="SYSTEM_ID" />
+      <PropertyRef Name="USER_ID" />
+      <PropertyRef Name="LOGIN_NAME" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" />
+    <Property Name="SYSTEM_ID" Type="Int64" Nullable="false" />
+    <Property Name="CAPTION" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="DESCRIPTION" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="MANUFACTURER" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NAME" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="SYSTEM_NAME" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="MAC_ADDRESS" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="SYSTEM_UP_TIME" Type="DateTime" Precision="3" />
+    <Property Name="USER_ID" Type="Int32" Nullable="false" />
+    <Property Name="LOGIN_NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="COMPANY" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="V_SYSTEM_SOUND_DEVICES">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="SYSTEM_ID" />
+      <PropertyRef Name="USERID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" />
+    <Property Name="SYSTEM_ID" Type="Int64" Nullable="false" />
+    <Property Name="CAPTION" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="DESCRIPTION" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="MANUFACTURER" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NAME" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="STATUS_INFO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MAC_ADDRESS" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="MOTHERBOARD_MANUFACTURER" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="ACCOUNT_NAME" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="DEFAULT_IP_GATEWAY" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="COMPUTER_NAME" Type="String" MaxLength="75" FixedLength="false" Unicode="false" />
+    <Property Name="LAST_BOOT_TIME" Type="DateTime" Precision="3" />
+    <Property Name="SYSTEM_UP_TIME" Type="DateTime" Precision="3" />
+    <Property Name="USERID" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="V_SYSTEM_VIDEO_CONTROLLER">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="SYSTEM_ID" />
+      <PropertyRef Name="USER_ID" />
+      <PropertyRef Name="LOGIN_NAME" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" />
+    <Property Name="CAPTION" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="DESCRIPTION" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="NAME" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="VIDEO_ARCHITECTURE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="VIDEO_PROCESSOR" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="VIDEO_MEMORY_TYPE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SYSTEM_ID" Type="Int64" Nullable="false" />
+    <Property Name="MAC_ADDRESS" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ACCOUNT_NAME" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="SYSTEM_UP_TIME" Type="DateTime" Precision="3" />
+    <Property Name="USER_ID" Type="Int32" Nullable="false" />
+    <Property Name="LOGIN_NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="COMPANY" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="V_SYSTEM_VIDEO_CONTROLLERS">
+    <Key>
+      <PropertyRef Name="SYSTEM_ID" />
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="Expr1" />
+      <PropertyRef Name="USERID" />
+    </Key>
+    <Property Name="SYSTEM_ID" Type="Int64" Nullable="false" />
+    <Property Name="ID" Type="Int64" Nullable="false" />
+    <Property Name="CAPTION" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="DESCRIPTION" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="DRIVER_DATE" Type="DateTime" Precision="3" />
+    <Property Name="DRIVER_VERSION" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NAME" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="VIDEO_ARCHITECTURE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="VIDEO_PROCESSOR" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MAC_ADDRESS" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Expr1" Type="Int64" Nullable="false" />
+    <Property Name="MOTHERBOARD_MANUFACTURER" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="ACCOUNT_NAME" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="DEFAULT_IP_GATEWAY" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="COMPUTER_NAME" Type="String" MaxLength="75" FixedLength="false" Unicode="false" />
+    <Property Name="LAST_BOOT_TIME" Type="DateTime" Precision="3" />
+    <Property Name="USERID" Type="Int32" Nullable="false" />
+    <Property Name="SYSTEM_UP_TIME" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="V_SYSTEM_VOLUME">
+    <Key>
+      <PropertyRef Name="Expr1" />
+      <PropertyRef Name="SYETEM_ID" />
+      <PropertyRef Name="USER_ID" />
+      <PropertyRef Name="LOGIN_NAME" />
+    </Key>
+    <Property Name="Expr1" Type="Int32" Nullable="false" />
+    <Property Name="SYETEM_ID" Type="Int64" Nullable="false" />
+    <Property Name="DEVICE_TYPE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CAPTION" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SERIAL_NO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TOTAL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FREE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="USED" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MAC_ADDRESS" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ACCOUNT_NAME" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="SYSTEM_UP_TIME" Type="DateTime" Precision="3" />
+    <Property Name="USER_ID" Type="Int32" Nullable="false" />
+    <Property Name="LOGIN_NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="COMPANY" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="V_USER_LOGIN_DETAIL">
+    <Key>
+      <PropertyRef Name="USER_ID" />
+      <PropertyRef Name="LOGIN_NAME" />
+      <PropertyRef Name="PASSWORD" />
+      <PropertyRef Name="EMAIL_ALERT" />
+      <PropertyRef Name="SMS_ALERT" />
+      <PropertyRef Name="PHONE_ALERT" />
+      <PropertyRef Name="SYSTEM_ID" />
+    </Key>
+    <Property Name="USER_ID" Type="Int32" Nullable="false" />
+    <Property Name="LOGIN_NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PASSWORD" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="EMAIL" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="USER_ROLE" Type="Int32" />
+    <Property Name="STATUS" Type="Boolean" />
+    <Property Name="COMPANY" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FIRST_NAME" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="LAST_NAME" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="PHONE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="LAST_LOGIN" Type="DateTime" Precision="3" />
+    <Property Name="EMAIL_ALERT" Type="Boolean" Nullable="false" />
+    <Property Name="SMS_ALERT" Type="Boolean" Nullable="false" />
+    <Property Name="PHONE_ALERT" Type="Boolean" Nullable="false" />
+    <Property Name="ADDRESS_LINE_1" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ADDRESS_LINE_2" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="STATE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="CITY" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="PINCODE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="COUNTRY" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MAC_ADDRESS" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="SYSTEM_ID" Type="Int64" Nullable="false" />
+    <Property Name="FK_COMPANY_ID" Type="Int32" />
+  </EntityType>
+  <EntityType Name="V_USER_PRIVS_WITHROLE">
+    <Key>
+      <PropertyRef Name="PRIVID" />
+      <PropertyRef Name="DEFAULTNAME" />
+      <PropertyRef Name="DEFUULTTEXT" />
+      <PropertyRef Name="STATUS" />
+      <PropertyRef Name="ROLENAME" />
+      <PropertyRef Name="ROLEID" />
+      <PropertyRef Name="USER_ID" />
+    </Key>
+    <Property Name="PRIVID" Type="Int32" Nullable="false" />
+    <Property Name="DEFAULTNAME" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DEFUULTTEXT" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="STATUS" Type="Boolean" Nullable="false" />
+    <Property Name="ROLENAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ROLEID" Type="Int32" Nullable="false" />
+    <Property Name="USER_ID" Type="Int32" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_ACTIVITYLOG_LOGTYPES">
+    <End Role="LOGTYPES" Type="Self.LOGTYPE" Multiplicity="1" />
+    <End Role="ACTIVITYLOG" Type="Self.ACTIVITYLOG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LOGTYPES">
+        <PropertyRef Name="LOGTYPEID" />
+      </Principal>
+      <Dependent Role="ACTIVITYLOG">
+        <PropertyRef Name="LOGTYPE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ACTIVITYLOG_SYSTEM_INFORMATION">
+    <End Role="SYSTEM_INFORMATION" Type="Self.SYSTEM_INFORMATION" Multiplicity="1" />
+    <End Role="ACTIVITYLOG" Type="Self.ACTIVITYLOG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SYSTEM_INFORMATION">
+        <PropertyRef Name="SYSTEM_ID" />
+      </Principal>
+      <Dependent Role="ACTIVITYLOG">
+        <PropertyRef Name="SYSTEM_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BROWSER_HISTORY_BROWSER">
+    <End Role="BROWSER" Type="Self.BROWSER" Multiplicity="0..1" />
+    <End Role="BROWSER_HISTORY" Type="Self.BROWSER_HISTORY" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BROWSER">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="BROWSER_HISTORY">
+        <PropertyRef Name="BROSWER_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BROWSER_HISTORY_SYSTEM_INFORMATION">
+    <End Role="SYSTEM_INFORMATION" Type="Self.SYSTEM_INFORMATION" Multiplicity="1" />
+    <End Role="BROWSER_HISTORY" Type="Self.BROWSER_HISTORY" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SYSTEM_INFORMATION">
+        <PropertyRef Name="SYSTEM_ID" />
+      </Principal>
+      <Dependent Role="BROWSER_HISTORY">
+        <PropertyRef Name="SYSTEM_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ROLEPRIVS_PRIVS">
+    <End Role="PRIVS" Type="Self.PRIV" Multiplicity="1" />
+    <End Role="ROLEPRIVS" Type="Self.ROLEPRIV" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PRIVS">
+        <PropertyRef Name="PRIVID" />
+      </Principal>
+      <Dependent Role="ROLEPRIVS">
+        <PropertyRef Name="PRIVID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ROLEPRIVS_ROLES">
+    <End Role="ROLES" Type="Self.ROLE" Multiplicity="1" />
+    <End Role="ROLEPRIVS" Type="Self.ROLEPRIV" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ROLES">
+        <PropertyRef Name="ROLEID" />
+      </Principal>
+      <Dependent Role="ROLEPRIVS">
+        <PropertyRef Name="ROLEID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_USERROLES_ROLES">
+    <End Role="ROLES" Type="Self.ROLE" Multiplicity="1" />
+    <End Role="USERROLES" Type="Self.USERROLE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ROLES">
+        <PropertyRef Name="ROLEID" />
+      </Principal>
+      <Dependent Role="USERROLES">
+        <PropertyRef Name="ROLEID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SUPPORT_SYSTEM_INFORMATION">
+    <End Role="SYSTEM_INFORMATION" Type="Self.SYSTEM_INFORMATION" Multiplicity="1" />
+    <End Role="SUPPORT" Type="Self.SUPPORT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SYSTEM_INFORMATION">
+        <PropertyRef Name="SYSTEM_ID" />
+      </Principal>
+      <Dependent Role="SUPPORT">
+        <PropertyRef Name="SYSTEM_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SUPPORT_USER_LOGIN">
+    <End Role="USER_LOGIN" Type="Self.USER_LOGIN" Multiplicity="1" />
+    <End Role="SUPPORT" Type="Self.SUPPORT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="USER_LOGIN">
+        <PropertyRef Name="USER_ID" />
+      </Principal>
+      <Dependent Role="SUPPORT">
+        <PropertyRef Name="USERID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SYSTEM_DEVICE_SYSTEM_INFORMATION">
+    <End Role="SYSTEM_INFORMATION" Type="Self.SYSTEM_INFORMATION" Multiplicity="1" />
+    <End Role="SYSTEM_DEVICE" Type="Self.SYSTEM_DEVICE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SYSTEM_INFORMATION">
+        <PropertyRef Name="SYSTEM_ID" />
+      </Principal>
+      <Dependent Role="SYSTEM_DEVICE">
+        <PropertyRef Name="SYSTEM_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HARDWARE_INFORMATION_USER_LOGIN">
+    <End Role="USER_LOGIN" Type="Self.USER_LOGIN" Multiplicity="1" />
+    <End Role="SYSTEM_INFORMATION" Type="Self.SYSTEM_INFORMATION" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="USER_LOGIN">
+        <PropertyRef Name="USER_ID" />
+      </Principal>
+      <Dependent Role="SYSTEM_INFORMATION">
+        <PropertyRef Name="USERID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SYSTEM_INSTALLED_APPLICATION_SYSTEM_INFORMATION">
+    <End Role="SYSTEM_INFORMATION" Type="Self.SYSTEM_INFORMATION" Multiplicity="1" />
+    <End Role="SYSTEM_INSTALLED_APPLICATION" Type="Self.SYSTEM_INSTALLED_APPLICATION" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SYSTEM_INFORMATION">
+        <PropertyRef Name="SYSTEM_ID" />
+      </Principal>
+      <Dependent Role="SYSTEM_INSTALLED_APPLICATION">
+        <PropertyRef Name="SYSTEM_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SYSTEM_LICENSE_KEY_SYSTEM_INFORMATION">
+    <End Role="SYSTEM_INFORMATION" Type="Self.SYSTEM_INFORMATION" Multiplicity="1" />
+    <End Role="SYSTEM_LICENSE_KEY" Type="Self.SYSTEM_LICENSE_KEY" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SYSTEM_INFORMATION">
+        <PropertyRef Name="SYSTEM_ID" />
+      </Principal>
+      <Dependent Role="SYSTEM_LICENSE_KEY">
+        <PropertyRef Name="SYSTEM_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SYSTEM_MEMORY_SIZE_SYSTEM_INFORMATION">
+    <End Role="SYSTEM_INFORMATION" Type="Self.SYSTEM_INFORMATION" Multiplicity="1" />
+    <End Role="SYSTEM_MEMORY_SIZE" Type="Self.SYSTEM_MEMORY_SIZE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SYSTEM_INFORMATION">
+        <PropertyRef Name="SYSTEM_ID" />
+      </Principal>
+      <Dependent Role="SYSTEM_MEMORY_SIZE">
+        <PropertyRef Name="SYSTEM_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SYSTEM_MEMORY_SYSTEM_INFORMATION">
+    <End Role="SYSTEM_INFORMATION" Type="Self.SYSTEM_INFORMATION" Multiplicity="1" />
+    <End Role="SYSTEM_MEMORY" Type="Self.SYSTEM_MEMORY" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SYSTEM_INFORMATION">
+        <PropertyRef Name="SYSTEM_ID" />
+      </Principal>
+      <Dependent Role="SYSTEM_MEMORY">
+        <PropertyRef Name="SYSTEM_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SYSTEM_MEMORY_USAGE_SYSTEM_INFORMATION">
+    <End Role="SYSTEM_INFORMATION" Type="Self.SYSTEM_INFORMATION" Multiplicity="1" />
+    <End Role="SYSTEM_MEMORY_USAGE" Type="Self.SYSTEM_MEMORY_USAGE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SYSTEM_INFORMATION">
+        <PropertyRef Name="SYSTEM_ID" />
+      </Principal>
+      <Dependent Role="SYSTEM_MEMORY_USAGE">
+        <PropertyRef Name="SYSTEM_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SYSTEM_NETWORK_SYSTEM_INFORMATION">
+    <End Role="SYSTEM_INFORMATION" Type="Self.SYSTEM_INFORMATION" Multiplicity="1" />
+    <End Role="SYSTEM_NETWORK" Type="Self.SYSTEM_NETWORK" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SYSTEM_INFORMATION">
+        <PropertyRef Name="SYSTEM_ID" />
+      </Principal>
+      <Dependent Role="SYSTEM_NETWORK">
+        <PropertyRef Name="SYSTEM_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SYSTEM_POINTING_DEVICE_SYSTEM_INFORMATION">
+    <End Role="SYSTEM_INFORMATION" Type="Self.SYSTEM_INFORMATION" Multiplicity="1" />
+    <End Role="SYSTEM_POINTING_DEVICE" Type="Self.SYSTEM_POINTING_DEVICE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SYSTEM_INFORMATION">
+        <PropertyRef Name="SYSTEM_ID" />
+      </Principal>
+      <Dependent Role="SYSTEM_POINTING_DEVICE">
+        <PropertyRef Name="SYSTEM_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SYSTEM_PORT_CONNECTOR_SYSTEM_INFORMATION">
+    <End Role="SYSTEM_INFORMATION" Type="Self.SYSTEM_INFORMATION" Multiplicity="1" />
+    <End Role="SYSTEM_PORT_CONNECTOR" Type="Self.SYSTEM_PORT_CONNECTOR" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SYSTEM_INFORMATION">
+        <PropertyRef Name="SYSTEM_ID" />
+      </Principal>
+      <Dependent Role="SYSTEM_PORT_CONNECTOR">
+        <PropertyRef Name="SYSTEM_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SYSTEM_PRINTER_SYSTEM_INFORMATION">
+    <End Role="SYSTEM_INFORMATION" Type="Self.SYSTEM_INFORMATION" Multiplicity="1" />
+    <End Role="SYSTEM_PRINTER" Type="Self.SYSTEM_PRINTER" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SYSTEM_INFORMATION">
+        <PropertyRef Name="SYSTEM_ID" />
+      </Principal>
+      <Dependent Role="SYSTEM_PRINTER">
+        <PropertyRef Name="SYSTEM_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SYSTEM_PROCESSOR_USAGE_SYSTEM_INFORMATION">
+    <End Role="SYSTEM_INFORMATION" Type="Self.SYSTEM_INFORMATION" Multiplicity="1" />
+    <End Role="SYSTEM_PROCESSOR_USAGE" Type="Self.SYSTEM_PROCESSOR_USAGE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SYSTEM_INFORMATION">
+        <PropertyRef Name="SYSTEM_ID" />
+      </Principal>
+      <Dependent Role="SYSTEM_PROCESSOR_USAGE">
+        <PropertyRef Name="SYSTEM_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SYSTEM_SOUND_DEVICE_SYSTEM_INFORMATION">
+    <End Role="SYSTEM_INFORMATION" Type="Self.SYSTEM_INFORMATION" Multiplicity="1" />
+    <End Role="SYSTEM_SOUND_DEVICE" Type="Self.SYSTEM_SOUND_DEVICE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SYSTEM_INFORMATION">
+        <PropertyRef Name="SYSTEM_ID" />
+      </Principal>
+      <Dependent Role="SYSTEM_SOUND_DEVICE">
+        <PropertyRef Name="SYSTEM_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SYSTEM_USERS_SYSTEM_INFORMATION">
+    <End Role="SYSTEM_INFORMATION" Type="Self.SYSTEM_INFORMATION" Multiplicity="1" />
+    <End Role="SYSTEM_USERS" Type="Self.SYSTEM_USERS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SYSTEM_INFORMATION">
+        <PropertyRef Name="SYSTEM_ID" />
+      </Principal>
+      <Dependent Role="SYSTEM_USERS">
+        <PropertyRef Name="SYSTEM_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SYSTEM_VIDEO_CONTROLLER_SYSTEM_INFORMATION">
+    <End Role="SYSTEM_INFORMATION" Type="Self.SYSTEM_INFORMATION" Multiplicity="1" />
+    <End Role="SYSTEM_VIDEO_CONTROLLER" Type="Self.SYSTEM_VIDEO_CONTROLLER" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SYSTEM_INFORMATION">
+        <PropertyRef Name="SYSTEM_ID" />
+      </Principal>
+      <Dependent Role="SYSTEM_VIDEO_CONTROLLER">
+        <PropertyRef Name="SYSTEM_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SYSTEM_VOLUME_SYSTEM_INFORMATION">
+    <End Role="SYSTEM_INFORMATION" Type="Self.SYSTEM_INFORMATION" Multiplicity="1" />
+    <End Role="SYSTEM_VOLUME" Type="Self.SYSTEM_VOLUME" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SYSTEM_INFORMATION">
+        <PropertyRef Name="SYSTEM_ID" />
+      </Principal>
+      <Dependent Role="SYSTEM_VOLUME">
+        <PropertyRef Name="SYETEM_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WINDOW_ACTIVE_SYSTEM_INFORMATION">
+    <End Role="SYSTEM_INFORMATION" Type="Self.SYSTEM_INFORMATION" Multiplicity="0..1" />
+    <End Role="WINDOW_ACTIVE" Type="Self.WINDOW_ACTIVE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SYSTEM_INFORMATION">
+        <PropertyRef Name="SYSTEM_ID" />
+      </Principal>
+      <Dependent Role="WINDOW_ACTIVE">
+        <PropertyRef Name="SYSTEM_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SYSTEM_USERS_USER_LOGIN">
+    <End Role="USER_LOGIN" Type="Self.USER_LOGIN" Multiplicity="1" />
+    <End Role="SYSTEM_USERS" Type="Self.SYSTEM_USERS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="USER_LOGIN">
+        <PropertyRef Name="USER_ID" />
+      </Principal>
+      <Dependent Role="SYSTEM_USERS">
+        <PropertyRef Name="USER_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_USERPRIVS_USER_LOGIN">
+    <End Role="USER_LOGIN" Type="Self.USER_LOGIN" Multiplicity="1" />
+    <End Role="USERPRIVS" Type="Self.USERPRIV" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="USER_LOGIN">
+        <PropertyRef Name="USER_ID" />
+      </Principal>
+      <Dependent Role="USERPRIVS">
+        <PropertyRef Name="USERID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="iSpyDb" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="ACTIVITYLOGs" EntityType="Self.ACTIVITYLOG" />
+    <EntitySet Name="BROWSERs" EntityType="Self.BROWSER" />
+    <EntitySet Name="BROWSER_HISTORY" EntityType="Self.BROWSER_HISTORY" />
+    <EntitySet Name="COMPANies" EntityType="Self.COMPANY" />
+    <EntitySet Name="COMPANY_INDUSTRY" EntityType="Self.COMPANY_INDUSTRY" />
+    <EntitySet Name="LICENSE_TYPE" EntityType="Self.LICENSE_TYPE" />
+    <EntitySet Name="LOGTYPES" EntityType="Self.LOGTYPE" />
+    <EntitySet Name="PRIVS" EntityType="Self.PRIV" />
+    <EntitySet Name="ROLEPRIVS" EntityType="Self.ROLEPRIV" />
+    <EntitySet Name="ROLES" EntityType="Self.ROLE" />
+    <EntitySet Name="SUPPORTs" EntityType="Self.SUPPORT" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <EntitySet Name="SYSTEM_DEVICE" EntityType="Self.SYSTEM_DEVICE" />
+    <EntitySet Name="SYSTEM_INFORMATION" EntityType="Self.SYSTEM_INFORMATION" />
+    <EntitySet Name="SYSTEM_INSTALLED_APPLICATION" EntityType="Self.SYSTEM_INSTALLED_APPLICATION" />
+    <EntitySet Name="SYSTEM_LICENSE_KEY" EntityType="Self.SYSTEM_LICENSE_KEY" />
+    <EntitySet Name="SYSTEM_MEMORY" EntityType="Self.SYSTEM_MEMORY" />
+    <EntitySet Name="SYSTEM_MEMORY_SIZE" EntityType="Self.SYSTEM_MEMORY_SIZE" />
+    <EntitySet Name="SYSTEM_MEMORY_USAGE" EntityType="Self.SYSTEM_MEMORY_USAGE" />
+    <EntitySet Name="SYSTEM_NETWORK" EntityType="Self.SYSTEM_NETWORK" />
+    <EntitySet Name="SYSTEM_POINTING_DEVICE" EntityType="Self.SYSTEM_POINTING_DEVICE" />
+    <EntitySet Name="SYSTEM_PORT_CONNECTOR" EntityType="Self.SYSTEM_PORT_CONNECTOR" />
+    <EntitySet Name="SYSTEM_PRINTER" EntityType="Self.SYSTEM_PRINTER" />
+    <EntitySet Name="SYSTEM_PROCESSOR_USAGE" EntityType="Self.SYSTEM_PROCESSOR_USAGE" />
+    <EntitySet Name="SYSTEM_SOUND_DEVICE" EntityType="Self.SYSTEM_SOUND_DEVICE" />
+    <EntitySet Name="SYSTEM_USERS" EntityType="Self.SYSTEM_USERS" />
+    <EntitySet Name="SYSTEM_VIDEO_CONTROLLER" EntityType="Self.SYSTEM_VIDEO_CONTROLLER" />
+    <EntitySet Name="SYSTEM_VOLUME" EntityType="Self.SYSTEM_VOLUME" />
+    <EntitySet Name="USER_LOGIN" EntityType="Self.USER_LOGIN" />
+    <EntitySet Name="USERPRIVS" EntityType="Self.USERPRIV" />
+    <EntitySet Name="USERROLES" EntityType="Self.USERROLE" />
+    <EntitySet Name="WINDOW_ACTIVE" EntityType="Self.WINDOW_ACTIVE" />
+    <EntitySet Name="V_BrowerHistoryAll" EntityType="Self.V_BrowerHistoryAll" />
+    <EntitySet Name="V_BROWSER_HISTORY" EntityType="Self.V_BROWSER_HISTORY" />
+    <EntitySet Name="V_ROLE_PRIV" EntityType="Self.V_ROLE_PRIV" />
+    <EntitySet Name="V_SYSTEM_ACTIVE_WINDOW" EntityType="Self.V_SYSTEM_ACTIVE_WINDOW" />
+    <EntitySet Name="V_SYSTEM_ACTIVE_WINDOWS" EntityType="Self.V_SYSTEM_ACTIVE_WINDOWS" />
+    <EntitySet Name="V_SYSTEM_INFOR_REGISTERED" EntityType="Self.V_SYSTEM_INFOR_REGISTERED" />
+    <EntitySet Name="V_SYSTEM_MEMORY" EntityType="Self.V_SYSTEM_MEMORY" />
+    <EntitySet Name="V_SYSTEM_MEMORY_INFO" EntityType="Self.V_SYSTEM_MEMORY_INFO" />
+    <EntitySet Name="V_SYSTEM_MEMORY_USAGE" EntityType="Self.V_SYSTEM_MEMORY_USAGE" />
+    <EntitySet Name="V_SYSTEM_NETWOR_DEVICES" EntityType="Self.V_SYSTEM_NETWOR_DEVICES" />
+    <EntitySet Name="V_SYSTEM_NETWORK" EntityType="Self.V_SYSTEM_NETWORK" />
+    <EntitySet Name="V_SYSTEM_POINTING_DEVICE" EntityType="Self.V_SYSTEM_POINTING_DEVICE" />
+    <EntitySet Name="V_SYSTEM_PORTS_CONNECTOR" EntityType="Self.V_SYSTEM_PORTS_CONNECTOR" />
+    <EntitySet Name="V_SYSTEM_PRINTER_INFORMATION" EntityType="Self.V_SYSTEM_PRINTER_INFORMATION" />
+    <EntitySet Name="V_SYSTEM_PROCESSOR_USAGE" EntityType="Self.V_SYSTEM_PROCESSOR_USAGE" />
+    <EntitySet Name="V_SYSTEM_REGISTERED_APPS" EntityType="Self.V_SYSTEM_REGISTERED_APPS" />
+    <EntitySet Name="V_SYSTEM_SOUND" EntityType="Self.V_SYSTEM_SOUND" />
+    <EntitySet Name="V_SYSTEM_SOUND_DEVICES" EntityType="Self.V_SYSTEM_SOUND_DEVICES" />
+    <EntitySet Name="V_SYSTEM_VIDEO_CONTROLLER" EntityType="Self.V_SYSTEM_VIDEO_CONTROLLER" />
+    <EntitySet Name="V_SYSTEM_VIDEO_CONTROLLERS" EntityType="Self.V_SYSTEM_VIDEO_CONTROLLERS" />
+    <EntitySet Name="V_SYSTEM_VOLUME" EntityType="Self.V_SYSTEM_VOLUME" />
+    <EntitySet Name="V_USER_LOGIN_DETAIL" EntityType="Self.V_USER_LOGIN_DETAIL" />
+    <EntitySet Name="V_USER_PRIVS_WITHROLE" EntityType="Self.V_USER_PRIVS_WITHROLE" />
+    <AssociationSet Name="FK_ACTIVITYLOG_LOGTYPES" Association="Self.FK_ACTIVITYLOG_LOGTYPES">
+      <End Role="LOGTYPES" EntitySet="LOGTYPES" />
+      <End Role="ACTIVITYLOG" EntitySet="ACTIVITYLOGs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ACTIVITYLOG_SYSTEM_INFORMATION" Association="Self.FK_ACTIVITYLOG_SYSTEM_INFORMATION">
+      <End Role="SYSTEM_INFORMATION" EntitySet="SYSTEM_INFORMATION" />
+      <End Role="ACTIVITYLOG" EntitySet="ACTIVITYLOGs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BROWSER_HISTORY_BROWSER" Association="Self.FK_BROWSER_HISTORY_BROWSER">
+      <End Role="BROWSER" EntitySet="BROWSERs" />
+      <End Role="BROWSER_HISTORY" EntitySet="BROWSER_HISTORY" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BROWSER_HISTORY_SYSTEM_INFORMATION" Association="Self.FK_BROWSER_HISTORY_SYSTEM_INFORMATION">
+      <End Role="SYSTEM_INFORMATION" EntitySet="SYSTEM_INFORMATION" />
+      <End Role="BROWSER_HISTORY" EntitySet="BROWSER_HISTORY" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ROLEPRIVS_PRIVS" Association="Self.FK_ROLEPRIVS_PRIVS">
+      <End Role="PRIVS" EntitySet="PRIVS" />
+      <End Role="ROLEPRIVS" EntitySet="ROLEPRIVS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ROLEPRIVS_ROLES" Association="Self.FK_ROLEPRIVS_ROLES">
+      <End Role="ROLES" EntitySet="ROLES" />
+      <End Role="ROLEPRIVS" EntitySet="ROLEPRIVS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_USERROLES_ROLES" Association="Self.FK_USERROLES_ROLES">
+      <End Role="ROLES" EntitySet="ROLES" />
+      <End Role="USERROLES" EntitySet="USERROLES" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SUPPORT_SYSTEM_INFORMATION" Association="Self.FK_SUPPORT_SYSTEM_INFORMATION">
+      <End Role="SYSTEM_INFORMATION" EntitySet="SYSTEM_INFORMATION" />
+      <End Role="SUPPORT" EntitySet="SUPPORTs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SUPPORT_USER_LOGIN" Association="Self.FK_SUPPORT_USER_LOGIN">
+      <End Role="USER_LOGIN" EntitySet="USER_LOGIN" />
+      <End Role="SUPPORT" EntitySet="SUPPORTs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SYSTEM_DEVICE_SYSTEM_INFORMATION" Association="Self.FK_SYSTEM_DEVICE_SYSTEM_INFORMATION">
+      <End Role="SYSTEM_INFORMATION" EntitySet="SYSTEM_INFORMATION" />
+      <End Role="SYSTEM_DEVICE" EntitySet="SYSTEM_DEVICE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HARDWARE_INFORMATION_USER_LOGIN" Association="Self.FK_HARDWARE_INFORMATION_USER_LOGIN">
+      <End Role="USER_LOGIN" EntitySet="USER_LOGIN" />
+      <End Role="SYSTEM_INFORMATION" EntitySet="SYSTEM_INFORMATION" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SYSTEM_INSTALLED_APPLICATION_SYSTEM_INFORMATION" Association="Self.FK_SYSTEM_INSTALLED_APPLICATION_SYSTEM_INFORMATION">
+      <End Role="SYSTEM_INFORMATION" EntitySet="SYSTEM_INFORMATION" />
+      <End Role="SYSTEM_INSTALLED_APPLICATION" EntitySet="SYSTEM_INSTALLED_APPLICATION" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SYSTEM_LICENSE_KEY_SYSTEM_INFORMATION" Association="Self.FK_SYSTEM_LICENSE_KEY_SYSTEM_INFORMATION">
+      <End Role="SYSTEM_INFORMATION" EntitySet="SYSTEM_INFORMATION" />
+      <End Role="SYSTEM_LICENSE_KEY" EntitySet="SYSTEM_LICENSE_KEY" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SYSTEM_MEMORY_SIZE_SYSTEM_INFORMATION" Association="Self.FK_SYSTEM_MEMORY_SIZE_SYSTEM_INFORMATION">
+      <End Role="SYSTEM_INFORMATION" EntitySet="SYSTEM_INFORMATION" />
+      <End Role="SYSTEM_MEMORY_SIZE" EntitySet="SYSTEM_MEMORY_SIZE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SYSTEM_MEMORY_SYSTEM_INFORMATION" Association="Self.FK_SYSTEM_MEMORY_SYSTEM_INFORMATION">
+      <End Role="SYSTEM_INFORMATION" EntitySet="SYSTEM_INFORMATION" />
+      <End Role="SYSTEM_MEMORY" EntitySet="SYSTEM_MEMORY" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SYSTEM_MEMORY_USAGE_SYSTEM_INFORMATION" Association="Self.FK_SYSTEM_MEMORY_USAGE_SYSTEM_INFORMATION">
+      <End Role="SYSTEM_INFORMATION" EntitySet="SYSTEM_INFORMATION" />
+      <End Role="SYSTEM_MEMORY_USAGE" EntitySet="SYSTEM_MEMORY_USAGE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SYSTEM_NETWORK_SYSTEM_INFORMATION" Association="Self.FK_SYSTEM_NETWORK_SYSTEM_INFORMATION">
+      <End Role="SYSTEM_INFORMATION" EntitySet="SYSTEM_INFORMATION" />
+      <End Role="SYSTEM_NETWORK" EntitySet="SYSTEM_NETWORK" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SYSTEM_POINTING_DEVICE_SYSTEM_INFORMATION" Association="Self.FK_SYSTEM_POINTING_DEVICE_SYSTEM_INFORMATION">
+      <End Role="SYSTEM_INFORMATION" EntitySet="SYSTEM_INFORMATION" />
+      <End Role="SYSTEM_POINTING_DEVICE" EntitySet="SYSTEM_POINTING_DEVICE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SYSTEM_PORT_CONNECTOR_SYSTEM_INFORMATION" Association="Self.FK_SYSTEM_PORT_CONNECTOR_SYSTEM_INFORMATION">
+      <End Role="SYSTEM_INFORMATION" EntitySet="SYSTEM_INFORMATION" />
+      <End Role="SYSTEM_PORT_CONNECTOR" EntitySet="SYSTEM_PORT_CONNECTOR" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SYSTEM_PRINTER_SYSTEM_INFORMATION" Association="Self.FK_SYSTEM_PRINTER_SYSTEM_INFORMATION">
+      <End Role="SYSTEM_INFORMATION" EntitySet="SYSTEM_INFORMATION" />
+      <End Role="SYSTEM_PRINTER" EntitySet="SYSTEM_PRINTER" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SYSTEM_PROCESSOR_USAGE_SYSTEM_INFORMATION" Association="Self.FK_SYSTEM_PROCESSOR_USAGE_SYSTEM_INFORMATION">
+      <End Role="SYSTEM_INFORMATION" EntitySet="SYSTEM_INFORMATION" />
+      <End Role="SYSTEM_PROCESSOR_USAGE" EntitySet="SYSTEM_PROCESSOR_USAGE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SYSTEM_SOUND_DEVICE_SYSTEM_INFORMATION" Association="Self.FK_SYSTEM_SOUND_DEVICE_SYSTEM_INFORMATION">
+      <End Role="SYSTEM_INFORMATION" EntitySet="SYSTEM_INFORMATION" />
+      <End Role="SYSTEM_SOUND_DEVICE" EntitySet="SYSTEM_SOUND_DEVICE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SYSTEM_USERS_SYSTEM_INFORMATION" Association="Self.FK_SYSTEM_USERS_SYSTEM_INFORMATION">
+      <End Role="SYSTEM_INFORMATION" EntitySet="SYSTEM_INFORMATION" />
+      <End Role="SYSTEM_USERS" EntitySet="SYSTEM_USERS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SYSTEM_VIDEO_CONTROLLER_SYSTEM_INFORMATION" Association="Self.FK_SYSTEM_VIDEO_CONTROLLER_SYSTEM_INFORMATION">
+      <End Role="SYSTEM_INFORMATION" EntitySet="SYSTEM_INFORMATION" />
+      <End Role="SYSTEM_VIDEO_CONTROLLER" EntitySet="SYSTEM_VIDEO_CONTROLLER" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SYSTEM_VOLUME_SYSTEM_INFORMATION" Association="Self.FK_SYSTEM_VOLUME_SYSTEM_INFORMATION">
+      <End Role="SYSTEM_INFORMATION" EntitySet="SYSTEM_INFORMATION" />
+      <End Role="SYSTEM_VOLUME" EntitySet="SYSTEM_VOLUME" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WINDOW_ACTIVE_SYSTEM_INFORMATION" Association="Self.FK_WINDOW_ACTIVE_SYSTEM_INFORMATION">
+      <End Role="SYSTEM_INFORMATION" EntitySet="SYSTEM_INFORMATION" />
+      <End Role="WINDOW_ACTIVE" EntitySet="WINDOW_ACTIVE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SYSTEM_USERS_USER_LOGIN" Association="Self.FK_SYSTEM_USERS_USER_LOGIN">
+      <End Role="USER_LOGIN" EntitySet="USER_LOGIN" />
+      <End Role="SYSTEM_USERS" EntitySet="SYSTEM_USERS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_USERPRIVS_USER_LOGIN" Association="Self.FK_USERPRIVS_USER_LOGIN">
+      <End Role="USER_LOGIN" EntitySet="USER_LOGIN" />
+      <End Role="USERPRIVS" EntitySet="USERPRIVS" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

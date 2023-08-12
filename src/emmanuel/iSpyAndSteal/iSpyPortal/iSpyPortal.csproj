@@ -1,0 +1,385 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{40EEDD46-B4F8-4D87-9412-9289FF662A3F}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>iSpyPortal</RootNamespace>
+    <AssemblyName>iSpyPortal</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>favicon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Telerik.WinControls, Version=2022.2.622.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e" />
+    <Reference Include="Telerik.WinControls.GridView, Version=2022.2.622.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.Themes.Aqua, Version=2022.2.622.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.Themes.Breeze, Version=2022.2.622.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.Themes.Crystal, Version=2022.2.622.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.Themes.CrystalDark, Version=2022.2.622.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.UI, Version=2022.2.622.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>C:\Program Files (x86)\Progress\Telerik UI for WinForms R2 2022\Bin40\Telerik.WinControls.UI.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="TelerikCommon, Version=2022.2.622.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>C:\Program Files (x86)\Progress\Telerik UI for WinForms R2 2022\Bin40\TelerikCommon.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Dashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dashboard.designer.cs">
+      <DependentUpon>Dashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboards\DashboardBrowser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dashboards\DashboardBrowser.Designer.cs">
+      <DependentUpon>DashboardBrowser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboards\DashboardActiveWindows.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dashboards\DashboardActiveWindows.Designer.cs">
+      <DependentUpon>DashboardActiveWindows.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboards\DashboardCpuUsage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dashboards\DashboardCpuUsage.designer.cs">
+      <DependentUpon>DashboardCpuUsage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboards\DashboardMemory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dashboards\DashboardMemory.Designer.cs">
+      <DependentUpon>DashboardMemory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboards\DashboardMemoryUsage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dashboards\DashboardMemoryUsage.designer.cs">
+      <DependentUpon>DashboardMemoryUsage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboards\DashboardNetwork.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dashboards\DashboardNetwork.Designer.cs">
+      <DependentUpon>DashboardNetwork.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboards\DashboardPointingDevice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dashboards\DashboardPointingDevice.Designer.cs">
+      <DependentUpon>DashboardPointingDevice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboards\DashboardPorts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dashboards\DashboardPorts.Designer.cs">
+      <DependentUpon>DashboardPorts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboards\DashboardSound.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dashboards\DashboardSound.Designer.cs">
+      <DependentUpon>DashboardSound.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboards\DashboardVideos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dashboards\DashboardVideos.Designer.cs">
+      <DependentUpon>DashboardVideos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboards\DashboardVoulme.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dashboards\DashboardVoulme.Designer.cs">
+      <DependentUpon>DashboardVoulme.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboards\DrivesInformation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dashboards\DrivesInformation.Designer.cs">
+      <DependentUpon>DrivesInformation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HardwareInfo.cs" />
+    <Compile Include="Connected Services\ServiceReference1\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RadForm1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RadForm1.Designer.cs">
+      <DependentUpon>RadForm1.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Dashboard.resx">
+      <DependentUpon>Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dashboards\DashboardBrowser.resx">
+      <DependentUpon>DashboardBrowser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dashboards\DashboardActiveWindows.resx">
+      <DependentUpon>DashboardActiveWindows.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dashboards\DashboardCpuUsage.resx">
+      <DependentUpon>DashboardCpuUsage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dashboards\DashboardMemory.resx">
+      <DependentUpon>DashboardMemory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dashboards\DashboardMemoryUsage.resx">
+      <DependentUpon>DashboardMemoryUsage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dashboards\DashboardNetwork.resx">
+      <DependentUpon>DashboardNetwork.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dashboards\DashboardPointingDevice.resx">
+      <DependentUpon>DashboardPointingDevice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dashboards\DashboardPorts.resx">
+      <DependentUpon>DashboardPorts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dashboards\DashboardSound.resx">
+      <DependentUpon>DashboardSound.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dashboards\DashboardVideos.resx">
+      <DependentUpon>DashboardVideos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dashboards\DashboardVoulme.resx">
+      <DependentUpon>DashboardVoulme.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dashboards\DrivesInformation.resx">
+      <DependentUpon>DrivesInformation.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="RadForm1.resx">
+      <DependentUpon>RadForm1.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Connected Services\ServiceReference1\iSpyPortal.ServiceReference1.ListItem.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\iSpyPortal.ServiceReference1.SYSTEM_INFORMATION.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\iSpyPortal.ServiceReference1.V_SYSTEM_ACTIVE_WINDOW.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\iSpyPortal.ServiceReference1.V_SYSTEM_ACTIVE_WINDOWS.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\iSpyPortal.ServiceReference1.V_SYSTEM_MEMORY.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\iSpyPortal.ServiceReference1.V_SYSTEM_MEMORY_USAGE.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\iSpyPortal.ServiceReference1.V_SYSTEM_NETWORK.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\iSpyPortal.ServiceReference1.V_SYSTEM_NETWOR_DEVICES.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\iSpyPortal.ServiceReference1.V_SYSTEM_POINTING_DEVICE.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\iSpyPortal.ServiceReference1.V_SYSTEM_PORTS_CONNECTOR.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\iSpyPortal.ServiceReference1.V_SYSTEM_PRINTER_INFORMATION.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\iSpyPortal.ServiceReference1.V_SYSTEM_PROCESSOR_USAGE.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\iSpyPortal.ServiceReference1.V_SYSTEM_REGISTERED_APPS.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\iSpyPortal.ServiceReference1.V_SYSTEM_SOUND.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\iSpyPortal.ServiceReference1.V_SYSTEM_SOUND_DEVICES.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\iSpyPortal.ServiceReference1.V_SYSTEM_VIDEO_CONTROLLER.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\iSpyPortal.ServiceReference1.V_SYSTEM_VIDEO_CONTROLLERS.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\iSpyPortal.ServiceReference1.V_SYSTEM_VOLUME.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\iSpyPortal.ServiceReference1.V_USER_LOGIN_DETAIL.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\Service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiceReference1\Service1.wsdl" />
+    <None Include="Connected Services\ServiceReference1\Service4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiceReference1\Service41.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiceReference1\Service42.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiceReference1\Service43.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\DataSources\Entities.LicenseDevices.datasource" />
+    <None Include="Properties\DataSources\Entities.PrivsList.datasource" />
+    <None Include="Properties\DataSources\Entities.RoleList.datasource" />
+    <None Include="Properties\DataSources\Entities.RolePrivlegesList.datasource" />
+    <None Include="Properties\DataSources\Entities.RolePrivsList.datasource" />
+    <None Include="Properties\DataSources\Entities.UserPortalEntity.datasource" />
+    <None Include="Properties\DataSources\Entities.UserRoleWithPrivsList.datasource" />
+    <None Include="Properties\DataSources\Entities.UsersEntity.datasource" />
+    <None Include="Properties\DataSources\Entities.V_BrowserHistory.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\how_illegal_is_a_keylogger.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\avatar.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\certificate_512.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\computer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\inbox.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\login.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\password.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\password1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\ServiceReference1\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceReference1\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceReference1\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceReference1\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Entities\Entities.csproj">
+      <Project>{d171bcb0-2db1-4cbd-8d03-6c3584d910b9}</Project>
+      <Name>Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Utilities\Utilities.csproj">
+      <Project>{490a91c2-7e74-4352-b14b-59bc3c504e41}</Project>
+      <Name>Utilities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo-sm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceReference1\Service1.disco" />
+    <Content Include="favicon.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

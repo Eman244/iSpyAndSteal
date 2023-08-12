@@ -1,0 +1,1006 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/iSpyAndStealService" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/iSpyAndStealService" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="SYSTEM_INFORMATION">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ACCOUNT_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ACTIVITYLOGs" nillable="true" type="tns:ArrayOfACTIVITYLOG" />
+      <xs:element minOccurs="0" name="BIOS_CAPTION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BIOS_MAKER" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BIOS_SERIAL_NO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BROWSER_HISTORY" nillable="true" type="tns:ArrayOfBROWSER_HISTORY" />
+      <xs:element minOccurs="0" name="CD_DVD_DRIVE_PATH" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="COMPANY_ID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="COMPUTER_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CPU_CURRENT_CLOCK_SPEED" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CPU_MANUFACTURER" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CPU_SPEED_IN_GHZ" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CURRENT_LANGUAGE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DEFAULT_IP_GATEWAY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HDD_SERIAL_NO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LAST_BOOT_TIME" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="MAC_ADDRESS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MOTHERBOARD_MANUFACTURER" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MOTHERBOARD_PRODUCT_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OS_INFORMATION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OS_LICENSE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PHYSICAL_RAM_MEMORY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PROCESSOR_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PROCESSOR_INFORMATION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RAM_SLOT_ON_MOTHERBOARD" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SUPPORTs" nillable="true" type="tns:ArrayOfSUPPORT" />
+      <xs:element minOccurs="0" name="SYSTEM_DEVICE" nillable="true" type="tns:ArrayOfSYSTEM_DEVICE" />
+      <xs:element minOccurs="0" name="SYSTEM_ID" type="xs:long" />
+      <xs:element minOccurs="0" name="SYSTEM_INSTALLED_APPLICATION" nillable="true" type="tns:ArrayOfSYSTEM_INSTALLED_APPLICATION" />
+      <xs:element minOccurs="0" name="SYSTEM_LICENSE_KEY" nillable="true" type="tns:ArrayOfSYSTEM_LICENSE_KEY" />
+      <xs:element minOccurs="0" name="SYSTEM_MEMORY" nillable="true" type="tns:ArrayOfSYSTEM_MEMORY" />
+      <xs:element minOccurs="0" name="SYSTEM_MEMORY_SIZE" nillable="true" type="tns:ArrayOfSYSTEM_MEMORY_SIZE" />
+      <xs:element minOccurs="0" name="SYSTEM_MEMORY_USAGE" nillable="true" type="tns:ArrayOfSYSTEM_MEMORY_USAGE" />
+      <xs:element minOccurs="0" name="SYSTEM_NETWORK" nillable="true" type="tns:ArrayOfSYSTEM_NETWORK" />
+      <xs:element minOccurs="0" name="SYSTEM_POINTING_DEVICE" nillable="true" type="tns:ArrayOfSYSTEM_POINTING_DEVICE" />
+      <xs:element minOccurs="0" name="SYSTEM_PORT_CONNECTOR" nillable="true" type="tns:ArrayOfSYSTEM_PORT_CONNECTOR" />
+      <xs:element minOccurs="0" name="SYSTEM_PRINTER" nillable="true" type="tns:ArrayOfSYSTEM_PRINTER" />
+      <xs:element minOccurs="0" name="SYSTEM_PROCESSOR_USAGE" nillable="true" type="tns:ArrayOfSYSTEM_PROCESSOR_USAGE" />
+      <xs:element minOccurs="0" name="SYSTEM_SOUND_DEVICE" nillable="true" type="tns:ArrayOfSYSTEM_SOUND_DEVICE" />
+      <xs:element minOccurs="0" name="SYSTEM_UP_TIME" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="SYSTEM_USERS" nillable="true" type="tns:ArrayOfSYSTEM_USERS" />
+      <xs:element minOccurs="0" name="SYSTEM_VIDEO_CONTROLLER" nillable="true" type="tns:ArrayOfSYSTEM_VIDEO_CONTROLLER" />
+      <xs:element minOccurs="0" name="SYSTEM_VOLUME" nillable="true" type="tns:ArrayOfSYSTEM_VOLUME" />
+      <xs:element minOccurs="0" name="USERID" type="xs:int" />
+      <xs:element minOccurs="0" name="USER_LOGIN" nillable="true" type="tns:USER_LOGIN" />
+      <xs:element minOccurs="0" name="WINDOW_ACTIVE" nillable="true" type="tns:ArrayOfWINDOW_ACTIVE" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SYSTEM_INFORMATION" nillable="true" type="tns:SYSTEM_INFORMATION" />
+  <xs:complexType name="ArrayOfACTIVITYLOG">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ACTIVITYLOG" nillable="true" type="tns:ACTIVITYLOG" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfACTIVITYLOG" nillable="true" type="tns:ArrayOfACTIVITYLOG" />
+  <xs:complexType name="ACTIVITYLOG">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="LOGID" type="xs:int" />
+      <xs:element minOccurs="0" name="LOGTYPE" type="xs:int" />
+      <xs:element minOccurs="0" name="LOGTYPE1" nillable="true" type="tns:LOGTYPE" />
+      <xs:element minOccurs="0" name="MAC" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MESSAGE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SYSTEM_ID" type="xs:long" />
+      <xs:element minOccurs="0" name="SYSTEM_INFORMATION" nillable="true" type="tns:SYSTEM_INFORMATION" />
+      <xs:element minOccurs="0" name="USERID" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ACTIVITYLOG" nillable="true" type="tns:ACTIVITYLOG" />
+  <xs:complexType name="LOGTYPE">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ACTIVITYLOGs" nillable="true" type="tns:ArrayOfACTIVITYLOG" />
+      <xs:element minOccurs="0" name="LOGTEXT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LOGTYPEID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LOGTYPE" nillable="true" type="tns:LOGTYPE" />
+  <xs:complexType name="ArrayOfBROWSER_HISTORY">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BROWSER_HISTORY" nillable="true" type="tns:BROWSER_HISTORY" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBROWSER_HISTORY" nillable="true" type="tns:ArrayOfBROWSER_HISTORY" />
+  <xs:complexType name="BROWSER_HISTORY">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BROSWER_ID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="BROWSER" nillable="true" type="tns:BROWSER" />
+      <xs:element minOccurs="0" name="ID" type="xs:long" />
+      <xs:element minOccurs="0" name="LAST_VISIT_DATE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LAST_VISIT_TIME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SYSTEM_ID" type="xs:long" />
+      <xs:element minOccurs="0" name="SYSTEM_INFORMATION" nillable="true" type="tns:SYSTEM_INFORMATION" />
+      <xs:element minOccurs="0" name="TITLE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="URL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VISIT_COUNT" nillable="true" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BROWSER_HISTORY" nillable="true" type="tns:BROWSER_HISTORY" />
+  <xs:complexType name="BROWSER">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BROWSER_HISTORY" nillable="true" type="tns:ArrayOfBROWSER_HISTORY" />
+      <xs:element minOccurs="0" name="DESCRIPTION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="NAME" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BROWSER" nillable="true" type="tns:BROWSER" />
+  <xs:complexType name="ArrayOfSUPPORT">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SUPPORT" nillable="true" type="tns:SUPPORT" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSUPPORT" nillable="true" type="tns:ArrayOfSUPPORT" />
+  <xs:complexType name="SUPPORT">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ASSIGNED_TO" type="xs:int" />
+      <xs:element minOccurs="0" name="CREATED_BY" type="xs:int" />
+      <xs:element minOccurs="0" name="CREATED_DATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DISCRIPTION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MODIFIED_DATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="MODULE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="STATUS" type="xs:boolean" />
+      <xs:element minOccurs="0" name="SUBJECT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SYSTEM_ID" type="xs:long" />
+      <xs:element minOccurs="0" name="SYSTEM_INFORMATION" nillable="true" type="tns:SYSTEM_INFORMATION" />
+      <xs:element minOccurs="0" name="TICKET_ID" type="xs:long" />
+      <xs:element minOccurs="0" name="URGENCY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="USERID" type="xs:int" />
+      <xs:element minOccurs="0" name="USER_LOGIN" nillable="true" type="tns:USER_LOGIN" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SUPPORT" nillable="true" type="tns:SUPPORT" />
+  <xs:complexType name="USER_LOGIN">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ADDRESS_LINE_1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ADDRESS_LINE_2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CITY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="COMPANY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="COUNTRY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EMAIL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EMAIL_ALERT" type="xs:boolean" />
+      <xs:element minOccurs="0" name="FIRST_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FK_COMPANY_ID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="LAST_LOGIN" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="LAST_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LOGIN_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PASSWORD" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PHONE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PHONE_ALERT" type="xs:boolean" />
+      <xs:element minOccurs="0" name="PINCODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SMS_ALERT" type="xs:boolean" />
+      <xs:element minOccurs="0" name="STATE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="STATUS" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="SUPPORTs" nillable="true" type="tns:ArrayOfSUPPORT" />
+      <xs:element minOccurs="0" name="SYSTEM_INFORMATION" nillable="true" type="tns:ArrayOfSYSTEM_INFORMATION" />
+      <xs:element minOccurs="0" name="SYSTEM_USERS" nillable="true" type="tns:ArrayOfSYSTEM_USERS" />
+      <xs:element minOccurs="0" name="USERPRIVS" nillable="true" type="tns:ArrayOfUSERPRIV" />
+      <xs:element minOccurs="0" name="USER_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="USER_ROLE" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="USER_LOGIN" nillable="true" type="tns:USER_LOGIN" />
+  <xs:complexType name="ArrayOfSYSTEM_INFORMATION">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SYSTEM_INFORMATION" nillable="true" type="tns:SYSTEM_INFORMATION" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSYSTEM_INFORMATION" nillable="true" type="tns:ArrayOfSYSTEM_INFORMATION" />
+  <xs:complexType name="ArrayOfSYSTEM_USERS">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SYSTEM_USERS" nillable="true" type="tns:SYSTEM_USERS" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSYSTEM_USERS" nillable="true" type="tns:ArrayOfSYSTEM_USERS" />
+  <xs:complexType name="SYSTEM_USERS">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ID" type="xs:long" />
+      <xs:element minOccurs="0" name="SYSTEM_ID" type="xs:long" />
+      <xs:element minOccurs="0" name="SYSTEM_INFORMATION" nillable="true" type="tns:SYSTEM_INFORMATION" />
+      <xs:element minOccurs="0" name="USER_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="USER_LOGIN" nillable="true" type="tns:USER_LOGIN" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SYSTEM_USERS" nillable="true" type="tns:SYSTEM_USERS" />
+  <xs:complexType name="ArrayOfUSERPRIV">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="USERPRIV" nillable="true" type="tns:USERPRIV" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUSERPRIV" nillable="true" type="tns:ArrayOfUSERPRIV" />
+  <xs:complexType name="USERPRIV">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="PRIV" type="xs:int" />
+      <xs:element minOccurs="0" name="STATUS" type="xs:int" />
+      <xs:element minOccurs="0" name="USERID" type="xs:int" />
+      <xs:element minOccurs="0" name="USER_LOGIN" nillable="true" type="tns:USER_LOGIN" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="USERPRIV" nillable="true" type="tns:USERPRIV" />
+  <xs:complexType name="ArrayOfSYSTEM_DEVICE">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SYSTEM_DEVICE" nillable="true" type="tns:SYSTEM_DEVICE" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSYSTEM_DEVICE" nillable="true" type="tns:ArrayOfSYSTEM_DEVICE" />
+  <xs:complexType name="SYSTEM_DEVICE">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DESCRIPTION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DEVICE_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DEVICE_TYPE" type="xs:int" />
+      <xs:element minOccurs="0" name="ID" type="xs:long" />
+      <xs:element minOccurs="0" name="SYSTEM_ID" type="xs:long" />
+      <xs:element minOccurs="0" name="SYSTEM_INFORMATION" nillable="true" type="tns:SYSTEM_INFORMATION" />
+      <xs:element minOccurs="0" name="TIME_STAMP" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SYSTEM_DEVICE" nillable="true" type="tns:SYSTEM_DEVICE" />
+  <xs:complexType name="ArrayOfSYSTEM_INSTALLED_APPLICATION">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SYSTEM_INSTALLED_APPLICATION" nillable="true" type="tns:SYSTEM_INSTALLED_APPLICATION" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSYSTEM_INSTALLED_APPLICATION" nillable="true" type="tns:ArrayOfSYSTEM_INSTALLED_APPLICATION" />
+  <xs:complexType name="SYSTEM_INSTALLED_APPLICATION">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="APP_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:long" />
+      <xs:element minOccurs="0" name="SIZE" type="xs:long" />
+      <xs:element minOccurs="0" name="SYSTEM_ID" type="xs:long" />
+      <xs:element minOccurs="0" name="SYSTEM_INFORMATION" nillable="true" type="tns:SYSTEM_INFORMATION" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SYSTEM_INSTALLED_APPLICATION" nillable="true" type="tns:SYSTEM_INSTALLED_APPLICATION" />
+  <xs:complexType name="ArrayOfSYSTEM_LICENSE_KEY">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SYSTEM_LICENSE_KEY" nillable="true" type="tns:SYSTEM_LICENSE_KEY" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSYSTEM_LICENSE_KEY" nillable="true" type="tns:ArrayOfSYSTEM_LICENSE_KEY" />
+  <xs:complexType name="SYSTEM_LICENSE_KEY">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="EDITION" type="xs:int" />
+      <xs:element minOccurs="0" name="EXPIRE_DATE" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="LICENSE_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="PURCHASE_DATE" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="QTY" type="xs:int" />
+      <xs:element minOccurs="0" name="SUPPORT" type="xs:int" />
+      <xs:element minOccurs="0" name="SYSTEM_ID" type="xs:long" />
+      <xs:element minOccurs="0" name="SYSTEM_INFORMATION" nillable="true" type="tns:SYSTEM_INFORMATION" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SYSTEM_LICENSE_KEY" nillable="true" type="tns:SYSTEM_LICENSE_KEY" />
+  <xs:complexType name="ArrayOfSYSTEM_MEMORY">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SYSTEM_MEMORY" nillable="true" type="tns:SYSTEM_MEMORY" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSYSTEM_MEMORY" nillable="true" type="tns:ArrayOfSYSTEM_MEMORY" />
+  <xs:complexType name="SYSTEM_MEMORY">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ATTRIBUTES" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BANK_LABEL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CAPACITY" type="xs:long" />
+      <xs:element minOccurs="0" name="CAPTION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CONFIGURE_CLOCL_SPEED" type="xs:long" />
+      <xs:element minOccurs="0" name="CREATION_CLASS_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DATA_WIDTH" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="DESCRIPTION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DEVICE_LOCATOR" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FORM_FACTOR" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ID" type="xs:long" />
+      <xs:element minOccurs="0" name="INTER_LEAVE_DATA_DEPTH" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="INTER_LEAVE_POSITION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MANUFACTURER" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MEMORY_TYPE" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PART_NUMBER" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="POSITION_IN_ROW" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="SERIAL_NO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SMBIOS_MEMORY_TYPE" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="SPEED" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SYSTEM_ID" type="xs:long" />
+      <xs:element minOccurs="0" name="SYSTEM_INFORMATION" nillable="true" type="tns:SYSTEM_INFORMATION" />
+      <xs:element minOccurs="0" name="TOTAL_WIDTH" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="TYPE_DETAIL" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SYSTEM_MEMORY" nillable="true" type="tns:SYSTEM_MEMORY" />
+  <xs:complexType name="ArrayOfSYSTEM_MEMORY_SIZE">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SYSTEM_MEMORY_SIZE" nillable="true" type="tns:SYSTEM_MEMORY_SIZE" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSYSTEM_MEMORY_SIZE" nillable="true" type="tns:ArrayOfSYSTEM_MEMORY_SIZE" />
+  <xs:complexType name="SYSTEM_MEMORY_SIZE">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FREE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:long" />
+      <xs:element minOccurs="0" name="MEMORY_TYPE" type="xs:int" />
+      <xs:element minOccurs="0" name="SYSTEM_ID" type="xs:long" />
+      <xs:element minOccurs="0" name="SYSTEM_INFORMATION" nillable="true" type="tns:SYSTEM_INFORMATION" />
+      <xs:element minOccurs="0" name="TIME_STAMP" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="TOTAL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="USED" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SYSTEM_MEMORY_SIZE" nillable="true" type="tns:SYSTEM_MEMORY_SIZE" />
+  <xs:complexType name="ArrayOfSYSTEM_MEMORY_USAGE">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SYSTEM_MEMORY_USAGE" nillable="true" type="tns:SYSTEM_MEMORY_USAGE" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSYSTEM_MEMORY_USAGE" nillable="true" type="tns:ArrayOfSYSTEM_MEMORY_USAGE" />
+  <xs:complexType name="SYSTEM_MEMORY_USAGE">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ID" type="xs:long" />
+      <xs:element minOccurs="0" name="SYSTEM_ID" type="xs:long" />
+      <xs:element minOccurs="0" name="SYSTEM_INFORMATION" nillable="true" type="tns:SYSTEM_INFORMATION" />
+      <xs:element minOccurs="0" name="TIME_STAMP" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="USAGE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="USER_ID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SYSTEM_MEMORY_USAGE" nillable="true" type="tns:SYSTEM_MEMORY_USAGE" />
+  <xs:complexType name="ArrayOfSYSTEM_NETWORK">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SYSTEM_NETWORK" nillable="true" type="tns:SYSTEM_NETWORK" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSYSTEM_NETWORK" nillable="true" type="tns:ArrayOfSYSTEM_NETWORK" />
+  <xs:complexType name="SYSTEM_NETWORK">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DESCRIPTION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:long" />
+      <xs:element minOccurs="0" name="NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SPEED" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="STATUS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SYSTEM_ID" type="xs:long" />
+      <xs:element minOccurs="0" name="SYSTEM_INFORMATION" nillable="true" type="tns:SYSTEM_INFORMATION" />
+      <xs:element minOccurs="0" name="TIME_STAMP" nillable="true" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SYSTEM_NETWORK" nillable="true" type="tns:SYSTEM_NETWORK" />
+  <xs:complexType name="ArrayOfSYSTEM_POINTING_DEVICE">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SYSTEM_POINTING_DEVICE" nillable="true" type="tns:SYSTEM_POINTING_DEVICE" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSYSTEM_POINTING_DEVICE" nillable="true" type="tns:ArrayOfSYSTEM_POINTING_DEVICE" />
+  <xs:complexType name="SYSTEM_POINTING_DEVICE">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CAPTION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DESCRIPTION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DEVICE_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DEVICE_INTERFACE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HARDWARE_TYPE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:long" />
+      <xs:element minOccurs="0" name="MANUFACTURER" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NUMBER_OF_BUTTONS" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="SYSTEM_ID" type="xs:long" />
+      <xs:element minOccurs="0" name="SYSTEM_INFORMATION" nillable="true" type="tns:SYSTEM_INFORMATION" />
+      <xs:element minOccurs="0" name="SYSTEM_NAME" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SYSTEM_POINTING_DEVICE" nillable="true" type="tns:SYSTEM_POINTING_DEVICE" />
+  <xs:complexType name="ArrayOfSYSTEM_PORT_CONNECTOR">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SYSTEM_PORT_CONNECTOR" nillable="true" type="tns:SYSTEM_PORT_CONNECTOR" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSYSTEM_PORT_CONNECTOR" nillable="true" type="tns:ArrayOfSYSTEM_PORT_CONNECTOR" />
+  <xs:complexType name="SYSTEM_PORT_CONNECTOR">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CAPTION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CONNECTOR_TYPE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DESCRIPTION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:long" />
+      <xs:element minOccurs="0" name="NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SYSTEM_ID" type="xs:long" />
+      <xs:element minOccurs="0" name="SYSTEM_INFORMATION" nillable="true" type="tns:SYSTEM_INFORMATION" />
+      <xs:element minOccurs="0" name="TAG" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SYSTEM_PORT_CONNECTOR" nillable="true" type="tns:SYSTEM_PORT_CONNECTOR" />
+  <xs:complexType name="ArrayOfSYSTEM_PRINTER">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SYSTEM_PRINTER" nillable="true" type="tns:SYSTEM_PRINTER" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSYSTEM_PRINTER" nillable="true" type="tns:ArrayOfSYSTEM_PRINTER" />
+  <xs:complexType name="SYSTEM_PRINTER">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AVERAGE_PAGES_PER_MINUTE" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="CAPABILITY_DESCRIPTION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CAPTION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DEVICE_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HORIZONTAL_RESOLUTION" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ID" type="xs:long" />
+      <xs:element minOccurs="0" name="NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NETWORK" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="PAPER_SIZE_SUPPORTED" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PRINTER_PAPER_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PRINT_PROCESSOR" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SPOOL_ENABLED" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="STATUS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SYSTEM_ID" type="xs:long" />
+      <xs:element minOccurs="0" name="SYSTEM_INFORMATION" nillable="true" type="tns:SYSTEM_INFORMATION" />
+      <xs:element minOccurs="0" name="SYSTEM_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VERTICAL_RESOLUTION" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SYSTEM_PRINTER" nillable="true" type="tns:SYSTEM_PRINTER" />
+  <xs:complexType name="ArrayOfSYSTEM_PROCESSOR_USAGE">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SYSTEM_PROCESSOR_USAGE" nillable="true" type="tns:SYSTEM_PROCESSOR_USAGE" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSYSTEM_PROCESSOR_USAGE" nillable="true" type="tns:ArrayOfSYSTEM_PROCESSOR_USAGE" />
+  <xs:complexType name="SYSTEM_PROCESSOR_USAGE">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ID" type="xs:long" />
+      <xs:element minOccurs="0" name="SYSTEM_ID" type="xs:long" />
+      <xs:element minOccurs="0" name="SYSTEM_INFORMATION" nillable="true" type="tns:SYSTEM_INFORMATION" />
+      <xs:element minOccurs="0" name="TIME_STAMP" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="USAGE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="USER_ID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SYSTEM_PROCESSOR_USAGE" nillable="true" type="tns:SYSTEM_PROCESSOR_USAGE" />
+  <xs:complexType name="ArrayOfSYSTEM_SOUND_DEVICE">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SYSTEM_SOUND_DEVICE" nillable="true" type="tns:SYSTEM_SOUND_DEVICE" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSYSTEM_SOUND_DEVICE" nillable="true" type="tns:ArrayOfSYSTEM_SOUND_DEVICE" />
+  <xs:complexType name="SYSTEM_SOUND_DEVICE">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CAPTION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DESCRIPTION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DEVICE_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:long" />
+      <xs:element minOccurs="0" name="MANUFACTURER" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="STATUS_INFO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SYSTEM_ID" type="xs:long" />
+      <xs:element minOccurs="0" name="SYSTEM_INFORMATION" nillable="true" type="tns:SYSTEM_INFORMATION" />
+      <xs:element minOccurs="0" name="SYSTEM_NAME" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SYSTEM_SOUND_DEVICE" nillable="true" type="tns:SYSTEM_SOUND_DEVICE" />
+  <xs:complexType name="ArrayOfSYSTEM_VIDEO_CONTROLLER">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SYSTEM_VIDEO_CONTROLLER" nillable="true" type="tns:SYSTEM_VIDEO_CONTROLLER" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSYSTEM_VIDEO_CONTROLLER" nillable="true" type="tns:ArrayOfSYSTEM_VIDEO_CONTROLLER" />
+  <xs:complexType name="SYSTEM_VIDEO_CONTROLLER">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ADAPTER_AVAILABILITY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ADAPTER_COMPATIABILITY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ADAPTER_DAC_TYPE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CAPTION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DESCRIPTION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DEVICE_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DRIVER_DATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DRIVER_VERSION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:long" />
+      <xs:element minOccurs="0" name="NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SYSTEM_ID" type="xs:long" />
+      <xs:element minOccurs="0" name="SYSTEM_INFORMATION" nillable="true" type="tns:SYSTEM_INFORMATION" />
+      <xs:element minOccurs="0" name="VIDEO_ARCHITECTURE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VIDEO_MEMORY_TYPE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VIDEO_PROCESSOR" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SYSTEM_VIDEO_CONTROLLER" nillable="true" type="tns:SYSTEM_VIDEO_CONTROLLER" />
+  <xs:complexType name="ArrayOfSYSTEM_VOLUME">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SYSTEM_VOLUME" nillable="true" type="tns:SYSTEM_VOLUME" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSYSTEM_VOLUME" nillable="true" type="tns:ArrayOfSYSTEM_VOLUME" />
+  <xs:complexType name="SYSTEM_VOLUME">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CAPTION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DEVICE_TYPE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FREE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="SERIAL_NO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SYETEM_ID" type="xs:long" />
+      <xs:element minOccurs="0" name="SYSTEM_INFORMATION" nillable="true" type="tns:SYSTEM_INFORMATION" />
+      <xs:element minOccurs="0" name="TIME_STAMP" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="TOTAL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="USED" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SYSTEM_VOLUME" nillable="true" type="tns:SYSTEM_VOLUME" />
+  <xs:complexType name="ArrayOfWINDOW_ACTIVE">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="WINDOW_ACTIVE" nillable="true" type="tns:WINDOW_ACTIVE" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfWINDOW_ACTIVE" nillable="true" type="tns:ArrayOfWINDOW_ACTIVE" />
+  <xs:complexType name="WINDOW_ACTIVE">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="END_TIME" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="SECONDS" type="xs:long" />
+      <xs:element minOccurs="0" name="START_TIME" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="SYSTEM_ID" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="SYSTEM_INFORMATION" nillable="true" type="tns:SYSTEM_INFORMATION" />
+      <xs:element minOccurs="0" name="TIME_STAMP" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="UPDATE_DATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="VISIT_COUNT" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="WINDOW_TITLE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WINDOW_URL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WIN_PROCESS" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="WINDOW_ACTIVE" nillable="true" type="tns:WINDOW_ACTIVE" />
+  <xs:complexType name="PRIV">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DEFAULTNAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DEFUULTTEXT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PRIVID" type="xs:int" />
+      <xs:element minOccurs="0" name="ROLEPRIVS" nillable="true" type="tns:ArrayOfROLEPRIV" />
+      <xs:element minOccurs="0" name="STATUS" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PRIV" nillable="true" type="tns:PRIV" />
+  <xs:complexType name="ArrayOfROLEPRIV">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ROLEPRIV" nillable="true" type="tns:ROLEPRIV" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfROLEPRIV" nillable="true" type="tns:ArrayOfROLEPRIV" />
+  <xs:complexType name="ROLEPRIV">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="PRIV" nillable="true" type="tns:PRIV" />
+      <xs:element minOccurs="0" name="PRIVID" type="xs:int" />
+      <xs:element minOccurs="0" name="ROLE" nillable="true" type="tns:ROLE" />
+      <xs:element minOccurs="0" name="ROLEID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ROLEPRIV" nillable="true" type="tns:ROLEPRIV" />
+  <xs:complexType name="ROLE">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CREATEDBY" type="xs:int" />
+      <xs:element minOccurs="0" name="CREATEDDATE" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ISACTIVE" type="xs:long" />
+      <xs:element minOccurs="0" name="LASTMODIFIED" type="xs:int" />
+      <xs:element minOccurs="0" name="LASTMODIFIEDDATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ROLEID" type="xs:int" />
+      <xs:element minOccurs="0" name="ROLENAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ROLEPRIVS" nillable="true" type="tns:ArrayOfROLEPRIV" />
+      <xs:element minOccurs="0" name="USERROLES" nillable="true" type="tns:ArrayOfUSERROLE" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ROLE" nillable="true" type="tns:ROLE" />
+  <xs:complexType name="ArrayOfUSERROLE">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="USERROLE" nillable="true" type="tns:USERROLE" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUSERROLE" nillable="true" type="tns:ArrayOfUSERROLE" />
+  <xs:complexType name="USERROLE">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="ROLE" nillable="true" type="tns:ROLE" />
+      <xs:element minOccurs="0" name="ROLEID" type="xs:int" />
+      <xs:element minOccurs="0" name="USERID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="USERROLE" nillable="true" type="tns:USERROLE" />
+  <xs:complexType name="V_USER_LOGIN_DETAIL">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ADDRESS_LINE_1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ADDRESS_LINE_2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CITY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="COMPANY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="COUNTRY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EMAIL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EMAIL_ALERT" type="xs:boolean" />
+      <xs:element minOccurs="0" name="FIRST_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FK_COMPANY_ID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="LAST_LOGIN" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="LAST_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LOGIN_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MAC_ADDRESS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PASSWORD" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PHONE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PHONE_ALERT" type="xs:boolean" />
+      <xs:element minOccurs="0" name="PINCODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SMS_ALERT" type="xs:boolean" />
+      <xs:element minOccurs="0" name="STATE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="STATUS" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="SYSTEM_ID" type="xs:long" />
+      <xs:element minOccurs="0" name="USER_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="USER_ROLE" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="V_USER_LOGIN_DETAIL" nillable="true" type="tns:V_USER_LOGIN_DETAIL" />
+  <xs:complexType name="ArrayOfV_SYSTEM_ACTIVE_WINDOW">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="V_SYSTEM_ACTIVE_WINDOW" nillable="true" type="tns:V_SYSTEM_ACTIVE_WINDOW" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfV_SYSTEM_ACTIVE_WINDOW" nillable="true" type="tns:ArrayOfV_SYSTEM_ACTIVE_WINDOW" />
+  <xs:complexType name="V_SYSTEM_ACTIVE_WINDOW">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ACCOUNT_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="COMPUTER_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="LOGIN_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MAC_ADDRESS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SECONDS" type="xs:long" />
+      <xs:element minOccurs="0" name="START_TIME" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="SYSTEM_ID" type="xs:long" />
+      <xs:element minOccurs="0" name="TIME_STAMP" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="USER_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="VISIT_COUNT" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="WINDOW_TITLE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WINDOW_URL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WIN_PROCESS" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="V_SYSTEM_ACTIVE_WINDOW" nillable="true" type="tns:V_SYSTEM_ACTIVE_WINDOW" />
+  <xs:complexType name="ArrayOfV_SYSTEM_NETWORK">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="V_SYSTEM_NETWORK" nillable="true" type="tns:V_SYSTEM_NETWORK" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfV_SYSTEM_NETWORK" nillable="true" type="tns:ArrayOfV_SYSTEM_NETWORK" />
+  <xs:complexType name="V_SYSTEM_NETWORK">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ACCOUNT_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DESCRIPTION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:long" />
+      <xs:element minOccurs="0" name="LOGIN_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MAC_ADDRESS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SPEED" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="STATUS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SYSTEM_ID" type="xs:long" />
+      <xs:element minOccurs="0" name="SYSTEM_UP_TIME" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="USER_ID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="V_SYSTEM_NETWORK" nillable="true" type="tns:V_SYSTEM_NETWORK" />
+  <xs:complexType name="ArrayOfV_SYSTEM_MEMORY">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="V_SYSTEM_MEMORY" nillable="true" type="tns:V_SYSTEM_MEMORY" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfV_SYSTEM_MEMORY" nillable="true" type="tns:ArrayOfV_SYSTEM_MEMORY" />
+  <xs:complexType name="V_SYSTEM_MEMORY">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ATTRIBUTES" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BANK_LABEL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CAPACITY" type="xs:long" />
+      <xs:element minOccurs="0" name="CAPTION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="COMPUTER_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CONFIGURE_CLOCL_SPEED" type="xs:long" />
+      <xs:element minOccurs="0" name="DESCRIPTION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DEVICE_LOCATOR" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:long" />
+      <xs:element minOccurs="0" name="LOGIN_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MAC_ADDRESS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MANUFACTURER" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SERIAL_NO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SPEED" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SYSTEM_ID" type="xs:long" />
+      <xs:element minOccurs="0" name="SYSTEM_UP_TIME" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="USER_ID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="V_SYSTEM_MEMORY" nillable="true" type="tns:V_SYSTEM_MEMORY" />
+  <xs:complexType name="ArrayOfV_SYSTEM_POINTING_DEVICE">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="V_SYSTEM_POINTING_DEVICE" nillable="true" type="tns:V_SYSTEM_POINTING_DEVICE" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfV_SYSTEM_POINTING_DEVICE" nillable="true" type="tns:ArrayOfV_SYSTEM_POINTING_DEVICE" />
+  <xs:complexType name="V_SYSTEM_POINTING_DEVICE">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CAPTION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="COMPANY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DESCRIPTION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DEVICE_INTERFACE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Expr1" type="xs:long" />
+      <xs:element minOccurs="0" name="ID" type="xs:long" />
+      <xs:element minOccurs="0" name="LOGIN_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MAC_ADDRESS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MANUFACTURER" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SYSTEM_ID" type="xs:long" />
+      <xs:element minOccurs="0" name="SYSTEM_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SYSTEM_UP_TIME" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="USERID" type="xs:int" />
+      <xs:element minOccurs="0" name="USER_ID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="V_SYSTEM_POINTING_DEVICE" nillable="true" type="tns:V_SYSTEM_POINTING_DEVICE" />
+  <xs:complexType name="ArrayOfV_SYSTEM_PORTS_CONNECTOR">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="V_SYSTEM_PORTS_CONNECTOR" nillable="true" type="tns:V_SYSTEM_PORTS_CONNECTOR" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfV_SYSTEM_PORTS_CONNECTOR" nillable="true" type="tns:ArrayOfV_SYSTEM_PORTS_CONNECTOR" />
+  <xs:complexType name="V_SYSTEM_PORTS_CONNECTOR">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ACCOUNT_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CAPTION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="COMPANY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CONNECTOR_TYPE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DESCRIPTION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:long" />
+      <xs:element minOccurs="0" name="LOGIN_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MAC_ADDRESS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SYSTEM_ID" type="xs:long" />
+      <xs:element minOccurs="0" name="SYSTEM_UP_TIME" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="TAG" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="USERID" type="xs:int" />
+      <xs:element minOccurs="0" name="USER_ID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="V_SYSTEM_PORTS_CONNECTOR" nillable="true" type="tns:V_SYSTEM_PORTS_CONNECTOR" />
+  <xs:complexType name="ArrayOfV_SYSTEM_PRINTER_INFORMATION">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="V_SYSTEM_PRINTER_INFORMATION" nillable="true" type="tns:V_SYSTEM_PRINTER_INFORMATION" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfV_SYSTEM_PRINTER_INFORMATION" nillable="true" type="tns:ArrayOfV_SYSTEM_PRINTER_INFORMATION" />
+  <xs:complexType name="V_SYSTEM_PRINTER_INFORMATION">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ACCOUNT_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CAPTION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="COMPANY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HORIZONTAL_RESOLUTION" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ID" type="xs:long" />
+      <xs:element minOccurs="0" name="LOGIN_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MAC_ADDRESS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NETWORK" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="PAPER_SIZE_SUPPORTED" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PRINTER_PAPER_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="STATUS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SYSTEM_ID" type="xs:long" />
+      <xs:element minOccurs="0" name="SYSTEM_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SYSTEM_UP_TIME" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="USERID" type="xs:int" />
+      <xs:element minOccurs="0" name="USER_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="VERTICAL_RESOLUTION" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="V_SYSTEM_PRINTER_INFORMATION" nillable="true" type="tns:V_SYSTEM_PRINTER_INFORMATION" />
+  <xs:complexType name="ArrayOfV_SYSTEM_SOUND">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="V_SYSTEM_SOUND" nillable="true" type="tns:V_SYSTEM_SOUND" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfV_SYSTEM_SOUND" nillable="true" type="tns:ArrayOfV_SYSTEM_SOUND" />
+  <xs:complexType name="V_SYSTEM_SOUND">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CAPTION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="COMPANY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DESCRIPTION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:long" />
+      <xs:element minOccurs="0" name="LOGIN_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MAC_ADDRESS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MANUFACTURER" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SYSTEM_ID" type="xs:long" />
+      <xs:element minOccurs="0" name="SYSTEM_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SYSTEM_UP_TIME" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="USER_ID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="V_SYSTEM_SOUND" nillable="true" type="tns:V_SYSTEM_SOUND" />
+  <xs:complexType name="ArrayOfV_SYSTEM_VIDEO_CONTROLLER">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="V_SYSTEM_VIDEO_CONTROLLER" nillable="true" type="tns:V_SYSTEM_VIDEO_CONTROLLER" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfV_SYSTEM_VIDEO_CONTROLLER" nillable="true" type="tns:ArrayOfV_SYSTEM_VIDEO_CONTROLLER" />
+  <xs:complexType name="V_SYSTEM_VIDEO_CONTROLLER">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ACCOUNT_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CAPTION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="COMPANY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DESCRIPTION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:long" />
+      <xs:element minOccurs="0" name="LOGIN_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MAC_ADDRESS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SYSTEM_ID" type="xs:long" />
+      <xs:element minOccurs="0" name="SYSTEM_UP_TIME" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="USER_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="VIDEO_ARCHITECTURE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VIDEO_MEMORY_TYPE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VIDEO_PROCESSOR" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="V_SYSTEM_VIDEO_CONTROLLER" nillable="true" type="tns:V_SYSTEM_VIDEO_CONTROLLER" />
+  <xs:complexType name="ArrayOfV_SYSTEM_VOLUME">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="V_SYSTEM_VOLUME" nillable="true" type="tns:V_SYSTEM_VOLUME" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfV_SYSTEM_VOLUME" nillable="true" type="tns:ArrayOfV_SYSTEM_VOLUME" />
+  <xs:complexType name="V_SYSTEM_VOLUME">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ACCOUNT_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CAPTION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="COMPANY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DEVICE_TYPE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Expr1" type="xs:int" />
+      <xs:element minOccurs="0" name="FREE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LOGIN_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MAC_ADDRESS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SERIAL_NO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SYETEM_ID" type="xs:long" />
+      <xs:element minOccurs="0" name="SYSTEM_UP_TIME" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="TOTAL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="USED" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="USER_ID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="V_SYSTEM_VOLUME" nillable="true" type="tns:V_SYSTEM_VOLUME" />
+  <xs:complexType name="ArrayOfV_SYSTEM_MEMORY_USAGE">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="V_SYSTEM_MEMORY_USAGE" nillable="true" type="tns:V_SYSTEM_MEMORY_USAGE" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfV_SYSTEM_MEMORY_USAGE" nillable="true" type="tns:ArrayOfV_SYSTEM_MEMORY_USAGE" />
+  <xs:complexType name="V_SYSTEM_MEMORY_USAGE">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="COMPUTER_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:long" />
+      <xs:element minOccurs="0" name="MAC_ADDRESS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PHYSICAL_RAM_MEMORY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SYSTEM_ID" type="xs:long" />
+      <xs:element minOccurs="0" name="TIME_STAMP" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="USAGE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="USERID" type="xs:int" />
+      <xs:element minOccurs="0" name="USER_ID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="V_SYSTEM_MEMORY_USAGE" nillable="true" type="tns:V_SYSTEM_MEMORY_USAGE" />
+  <xs:complexType name="ArrayOfV_SYSTEM_PROCESSOR_USAGE">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="V_SYSTEM_PROCESSOR_USAGE" nillable="true" type="tns:V_SYSTEM_PROCESSOR_USAGE" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfV_SYSTEM_PROCESSOR_USAGE" nillable="true" type="tns:ArrayOfV_SYSTEM_PROCESSOR_USAGE" />
+  <xs:complexType name="V_SYSTEM_PROCESSOR_USAGE">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="COMPUTER_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CPU_SPEED_IN_GHZ" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:long" />
+      <xs:element minOccurs="0" name="MAC_ADDRESS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SYSTEM_ID" type="xs:long" />
+      <xs:element minOccurs="0" name="TIME_STAMP" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="USAGE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="USERID" type="xs:int" />
+      <xs:element minOccurs="0" name="USER_ID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="V_SYSTEM_PROCESSOR_USAGE" nillable="true" type="tns:V_SYSTEM_PROCESSOR_USAGE" />
+  <xs:complexType name="ArrayOfV_SYSTEM_REGISTERED_APPS">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="V_SYSTEM_REGISTERED_APPS" nillable="true" type="tns:V_SYSTEM_REGISTERED_APPS" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfV_SYSTEM_REGISTERED_APPS" nillable="true" type="tns:ArrayOfV_SYSTEM_REGISTERED_APPS" />
+  <xs:complexType name="V_SYSTEM_REGISTERED_APPS">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ACCOUNT_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="APP_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="COMPUTER_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DEFAULT_IP_GATEWAY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:long" />
+      <xs:element minOccurs="0" name="MAC_ADDRESS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MOTHERBOARD_MANUFACTURER" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SIZE" type="xs:long" />
+      <xs:element minOccurs="0" name="SYSTEM_ID" type="xs:long" />
+      <xs:element minOccurs="0" name="USERID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="V_SYSTEM_REGISTERED_APPS" nillable="true" type="tns:V_SYSTEM_REGISTERED_APPS" />
+  <xs:complexType name="ArrayOfV_SYSTEM_ACTIVE_WINDOWS">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="V_SYSTEM_ACTIVE_WINDOWS" nillable="true" type="tns:V_SYSTEM_ACTIVE_WINDOWS" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfV_SYSTEM_ACTIVE_WINDOWS" nillable="true" type="tns:ArrayOfV_SYSTEM_ACTIVE_WINDOWS" />
+  <xs:complexType name="V_SYSTEM_ACTIVE_WINDOWS">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ACCOUNT_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="COMPUTER_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DEFAULT_IP_GATEWAY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LAST_BOOT_TIME" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="MAC_ADDRESS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MOTHERBOARD_MANUFACTURER" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SECONDS" type="xs:long" />
+      <xs:element minOccurs="0" name="START_TIME" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="SYSTEM_ID" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="SYSTEM_UP_TIME" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="TIME_STAMP" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="USERID" type="xs:int" />
+      <xs:element minOccurs="0" name="VISIT_COUNT" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="WINDOW_TITLE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WINDOW_URL" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="V_SYSTEM_ACTIVE_WINDOWS" nillable="true" type="tns:V_SYSTEM_ACTIVE_WINDOWS" />
+  <xs:complexType name="ArrayOfV_SYSTEM_VIDEO_CONTROLLERS">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="V_SYSTEM_VIDEO_CONTROLLERS" nillable="true" type="tns:V_SYSTEM_VIDEO_CONTROLLERS" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfV_SYSTEM_VIDEO_CONTROLLERS" nillable="true" type="tns:ArrayOfV_SYSTEM_VIDEO_CONTROLLERS" />
+  <xs:complexType name="V_SYSTEM_VIDEO_CONTROLLERS">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ACCOUNT_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CAPTION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="COMPUTER_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DEFAULT_IP_GATEWAY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DESCRIPTION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DRIVER_DATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DRIVER_VERSION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Expr1" type="xs:long" />
+      <xs:element minOccurs="0" name="ID" type="xs:long" />
+      <xs:element minOccurs="0" name="LAST_BOOT_TIME" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="MAC_ADDRESS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MOTHERBOARD_MANUFACTURER" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SYSTEM_ID" type="xs:long" />
+      <xs:element minOccurs="0" name="SYSTEM_UP_TIME" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="USERID" type="xs:int" />
+      <xs:element minOccurs="0" name="VIDEO_ARCHITECTURE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VIDEO_PROCESSOR" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="V_SYSTEM_VIDEO_CONTROLLERS" nillable="true" type="tns:V_SYSTEM_VIDEO_CONTROLLERS" />
+  <xs:complexType name="ArrayOfV_SYSTEM_SOUND_DEVICES">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="V_SYSTEM_SOUND_DEVICES" nillable="true" type="tns:V_SYSTEM_SOUND_DEVICES" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfV_SYSTEM_SOUND_DEVICES" nillable="true" type="tns:ArrayOfV_SYSTEM_SOUND_DEVICES" />
+  <xs:complexType name="V_SYSTEM_SOUND_DEVICES">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ACCOUNT_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CAPTION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="COMPUTER_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DEFAULT_IP_GATEWAY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DESCRIPTION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:long" />
+      <xs:element minOccurs="0" name="LAST_BOOT_TIME" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="MAC_ADDRESS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MANUFACTURER" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MOTHERBOARD_MANUFACTURER" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="STATUS_INFO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SYSTEM_ID" type="xs:long" />
+      <xs:element minOccurs="0" name="SYSTEM_UP_TIME" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="USERID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="V_SYSTEM_SOUND_DEVICES" nillable="true" type="tns:V_SYSTEM_SOUND_DEVICES" />
+  <xs:complexType name="ArrayOfV_SYSTEM_NETWOR_DEVICES">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="V_SYSTEM_NETWOR_DEVICES" nillable="true" type="tns:V_SYSTEM_NETWOR_DEVICES" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfV_SYSTEM_NETWOR_DEVICES" nillable="true" type="tns:ArrayOfV_SYSTEM_NETWOR_DEVICES" />
+  <xs:complexType name="V_SYSTEM_NETWOR_DEVICES">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ACCOUNT_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="COMPUTER_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DEFAULT_IP_GATEWAY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DESCRIPTION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:long" />
+      <xs:element minOccurs="0" name="LAST_BOOT_TIME" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="MAC_ADDRESS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SPEED" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="STATUS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SYSTEM_ID" type="xs:long" />
+      <xs:element minOccurs="0" name="SYSTEM_UP_TIME" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="TIME_STAMP" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="USERID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="V_SYSTEM_NETWOR_DEVICES" nillable="true" type="tns:V_SYSTEM_NETWOR_DEVICES" />
+</xs:schema>
